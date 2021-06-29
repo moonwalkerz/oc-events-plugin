@@ -1,0 +1,21 @@
+{
+    "name": "inalto/oc-events",
+    "type": "october-plugin",
+    "description": "Events Manager for October CMS",
+    "homepage": "https://github.com/inalto/oc-events",
+    "keywords": ["october", "octobercms", "translate"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alain Martini",
+            "email": "webmaster@martini-multimedia.net",
+            "role": "Co-founder"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "composer/installers": "~1.0",
+	"rainlab/translate": ">=1.9"
+    },
+    "minimum-stability": "dev"
+}
