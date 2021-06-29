@@ -13,7 +13,7 @@ class Tag extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'martinimultimedia_press_tags';
+    public $table = 'martinimultimedia_events_tags';
 
     public $timestamps=false;
    /**
