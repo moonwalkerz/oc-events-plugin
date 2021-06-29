@@ -7,7 +7,7 @@ class BuilderTableCreateMartinimultimediaEventsEventsCategories extends Migratio
 {
     public function up()
     {
-        //Schema::dropIfExists('martinimultimedia_events_events_categories');
+        Schema::dropIfExists('martinimultimedia_events_events_categories');
         Schema::create('martinimultimedia_events_events_categories', function($table)
         {
             $table->engine = 'InnoDB';

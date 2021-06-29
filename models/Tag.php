@@ -20,13 +20,8 @@ class Tag extends Model
      * @var array Relations
      */
     public $belongsToMany = [
-        'releases' => [
-            //'MartiniMultimedia\Press\Models\Release',
-            Release::class
-           // ,
-           // 'table' => 'martinimultimedia_press_releases_tags',
-           // 'key' => 'tag_id',
-           // 'otherKey' => 'release_id'
+        'events' => [
+            Event::class
         ]
     ];
 
@@ -45,7 +40,7 @@ class Tag extends Model
         'name' => 'required|unique:martinimultimedia_events_tags'
     ];
 
- /**
+    /**
      * Before create.
      *
      * @return void

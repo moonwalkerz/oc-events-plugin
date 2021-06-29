@@ -7,6 +7,7 @@ class BuilderTableCreateMartinimultimediaEventsVenues extends Migration
 {
     public function up()
     {
+        Schema::dropIfExists('martinimultimedia_events_venues');
         Schema::create('martinimultimedia_events_venues', function($table)
         {
             $table->engine = 'InnoDB';
@@ -14,10 +15,10 @@ class BuilderTableCreateMartinimultimediaEventsVenues extends Migration
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
             $table->timestamp('deleted_at')->nullable();
-            $table->string('name');
-            $table->text('excerpt');
-            $table->text('descrtiption');
-            $table->text('points');
+            $table->string('name')->nullable();
+            $table->text('excerpt')->nullable();
+            $table->text('descrtiption')->nullable();
+            $table->text('points')->nullable();
         });
     }
     
