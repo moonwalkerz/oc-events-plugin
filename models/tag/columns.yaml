@@ -1,0 +1,11 @@
+columns:
+    id:
+        label: id
+        type: number
+        searchable: true
+        sortable: true
+    name:
+        label: 'martinimultimedia.events::lang.list.name'
+        type: text
+        searchable: true
+        sortable: true

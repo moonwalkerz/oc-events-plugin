@@ -1,0 +1,13 @@
+list: $/martinimultimedia/events/models/category/columns.yaml
+modelClass: MartiniMultimedia\Events\Models\Category
+title: Categories
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+showTree: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'martinimultimedia/events/categories/update/:id'

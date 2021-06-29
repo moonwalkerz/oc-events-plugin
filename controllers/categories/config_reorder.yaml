@@ -1,0 +1,5 @@
+title: Categories
+nameFrom: title
+modelClass: MartiniMultimedia\Events\Models\Category
+toolbar:
+    buttons: reorder_toolbar

@@ -1,0 +1,63 @@
+fields:
+    name:
+        label: 'martinimultimedia.events::lang.form.name'
+        span: auto
+        type: text
+    slug:
+        label: 'martinimultimedia.events::lang.form.slug'
+        span: auto
+        preset:
+            field: name
+            type: slug
+        type: text
+    excerpt:
+        label: 'martinimultimedia.events::lang.form.excerpt'
+        size: small
+        span: full
+        type: richeditor
+    description:
+        label: 'martinimultimedia.events::lang.form.description'
+        size: large
+        span: full
+        type: richeditor
+    points:
+        label: 'martinimultimedia.events::lang.form.markers'
+        prompt: 'martinimultimedia.events::lang.form.add'
+        style: default
+        span: full
+        type: repeater
+        form:
+            fields:
+                name:
+                    label: 'martinimultimedia.events::lang.form.name'
+                    span: storm
+                    cssClass: col-sm-8
+                    type: text
+                lat:
+                    label: 'martinimultimedia.events::lang.form.lat'
+                    span: storm
+                    cssClass: col-sm-2
+                    type: text
+                lon:
+                    label: 'martinimultimedia.events::lang.form.lon'
+                    span: storm
+                    cssClass: col-sm-2
+                    type: text
+    images:
+        label: 'martinimultimedia.events::lang.form.images'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: full
+        type: fileupload
+    attachments:
+        label: 'martinimultimedia.events::lang.form.attachments'
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: full
+        type: fileupload

@@ -1,0 +1,29 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table martinimultimedia_events_events'
+    - builder_table_create_martinimultimedia_events_events.php
+1.0.3:
+    - 'Created table martinimultimedia_events_venues'
+    - builder_table_create_martinimultimedia_events_venues.php
+1.0.4:
+    - 'Updated table martinimultimedia_events_events'
+    - builder_table_update_martinimultimedia_events_events.php
+1.0.5:
+    - 'Updated table martinimultimedia_events_venues'
+    - builder_table_update_martinimultimedia_events_venues.php
+1.0.6:
+    - 'Updated table martinimultimedia_events_events'
+    - builder_table_update_martinimultimedia_events_events_2.php
+1.0.7:
+    - 'Create tables for categories'
+    - builder_table_create_martinimultimedia_events_categories.php
+1.0.8:
+    - 'Create tables for events categories relation'
+    - builder_table_create_martinimultimedia_events_events_categories.php
+1.0.9:
+    - 'Create tables for tags'
+    - builder_table_create_martinimultimedia_events_tags.php
+1.0.10:
+    - 'Create tables for tags events tags relation'
+    - builder_table_create_martinimultimedia_events_events_tags.php

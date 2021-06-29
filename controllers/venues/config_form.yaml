@@ -1,0 +1,10 @@
+name: Venues
+form: $/martinimultimedia/events/models/venue/fields.yaml
+modelClass: MartiniMultimedia\Events\Models\Venue
+defaultRedirect: martinimultimedia/events/venues
+create:
+    redirect: 'martinimultimedia/events/venues/update/:id'
+    redirectClose: martinimultimedia/events/venues
+update:
+    redirect: martinimultimedia/events/venues
+    redirectClose: martinimultimedia/events/venues

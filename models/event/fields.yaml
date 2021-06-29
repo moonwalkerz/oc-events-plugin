@@ -1,0 +1,54 @@
+fields:
+    name:
+        label: 'martinimultimedia.events::lang.form.name'
+        span: auto
+        type: text
+    slug:
+        label: 'martinimultimedia.events::lang.form.slug'
+        span: auto
+        preset:
+            field: name
+            type: slug
+        type: text
+    excerpt:
+        label: 'martinimultimedia.events::lang.form.excerpt'
+        size: small
+        span: full
+        type: richeditor
+    description:
+        label: 'martinimultimedia.events::lang.form.description'
+        size: large
+        span: full
+        type: richeditor
+    date_from:
+        label: 'martinimultimedia.events::lang.form.from'
+        mode: datetime
+        span: auto
+        type: datepicker
+    date_to:
+        label: 'martinimultimedia.events::lang.form.to'
+        mode: datetime
+        span: auto
+        type: datepicker
+    allday:
+        label: 'martinimultimedia.events::lang.form.allday'
+        span: auto
+        type: switch
+    images:
+        label: 'martinimultimedia.events::lang.form.images'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: full
+        type: fileupload
+    attachments:
+        label: 'martinimultimedia.events::lang.form.attachments'
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: full
+        type: fileupload

@@ -1,0 +1,28 @@
+plugin:
+    name: 'martinimultimedia.events::lang.plugin.name'
+    description: 'martinimultimedia.events::lang.plugin.description'
+    author: 'Martini Multimedia'
+    icon: oc-icon-ticket
+    homepage: ''
+navigation:
+    events-item:
+        label: 'martinimultimedia.events::lang.menu.events'
+        url: martinimultimedia/events/events
+        icon: icon-ticket
+        sideMenu:
+            side-event-item:
+                label: 'martinimultimedia.events::lang.menu.events'
+                url: martinimultimedia/events/events
+                icon: icon-ticket
+            side-event-venue:
+                label: 'martinimultimedia.events::lang.menu.venues'
+                url: martinimultimedia/events/venues
+                icon: icon-home
+            side-event-category:
+                label: 'martinimultimedia.events::lang.menu.categories'
+                url: martinimultimedia/events/categories
+                icon: icon-list-alt
+            side-event-tag:
+                label: 'martinimultimedia.events::lang.menu.tags'
+                url: martinimultimedia/events/tags
+                icon: icon-tags

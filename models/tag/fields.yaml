@@ -1,0 +1,12 @@
+fields:
+    name:
+        label: 'martinimultimedia.events::lang.form.tag'
+        span: auto
+        type: text
+    slug:
+        label: 'martinimultimedia.events::lang.form.slug'
+        span: auto
+        preset:
+            field: name
+            type: slug
+        type: text
