@@ -1,7 +1,7 @@
 {
     "name": "martinimultimedia/events-plugin",
     "type": "october-plugin",
-    "description": "Events Management for October CMS",
+    "description": "Events Manager for October CMS",
     "homepage": "https://github.com/inalto/oc-events",
     "keywords": ["october", "octobercms", "translate"],
     "license": "MIT",
@@ -9,7 +9,7 @@
         {
             "name": "Alain Martini",
             "email": "webmaster@martini-multimedia.net",
-            "role": "Co-founder"
+            "role": "Founder"
         }
     ],
     "require": {
