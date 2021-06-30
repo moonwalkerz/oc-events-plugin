@@ -34,6 +34,48 @@ fields:
         label: 'martinimultimedia.events::lang.form.allday'
         span: auto
         type: switch
+    categories:
+        label: Categorie
+        nameFrom: title
+        descriptionFrom: description
+        span: auto
+        type: relation
+    tags:
+        label: 'martinimultimedia.events::lang.form.tags'
+        mode: relation
+        nameFrom: name
+        separator: comma
+        customTags: true
+        useKey: true
+        span: full
+        type: taglist
+
+    contacts:
+        label: 'martinimultimedia.events::lang.form.contacts'
+        prompt: 'martinimultimedia.events::lang.form.add'
+        span: full
+        type: repeater
+        form:
+            fields:
+                type:
+                    label: Dropdown
+                    options:
+                        0: 'martinimultimedia.events::lang.form.choose'
+                        email: 'martinimultimedia.events::lang.form.email'
+                        pec: 'martinimultimedia.events::lang.form.pec'
+                        phone: 'martinimultimedia.events::lang.form.phone'
+                        cell: 'martinimultimedia.events::lang.form.mobile'
+                        fax: 'martinimultimedia.events::lang.form.fax'
+                        whatsapp: 'martinimultimedia.events::lang.form.whatsapp'
+                        telegram: 'martinimultimedia.events::lang.form.telegram'
+                    showSearch: true
+                    span: auto
+                    placeholder: 'martinimultimedia.events::lang.form.choose'
+                    type: dropdown
+                contact:
+                    label: 'martinimultimedia.events::lang.form.contact'
+                    span: auto
+                    type: text
     images:
         label: 'martinimultimedia.events::lang.form.images'
         mode: image
@@ -52,3 +94,10 @@ fields:
             extension: auto
         span: full
         type: fileupload
+    venue:
+        label: 'martinimultimedia.events::lang.form.venue'
+        nameFrom: name
+        descriptionFrom: description
+        list: $/martinimultimedia/events/models/venue/columns.yaml
+        span: full
+        type: recordfinder

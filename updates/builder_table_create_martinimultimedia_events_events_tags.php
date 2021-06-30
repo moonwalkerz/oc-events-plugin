@@ -3,7 +3,7 @@
 use Schema;
 use October\Rain\Database\Updates\Migration;
 
-class BuilderTableCreateMartinimultimediaEventsTagsEvents extends Migration
+class BuilderTableCreateMartiniMultimediaEventsEventsTags extends Migration
 {
     public function up()
     {
@@ -11,10 +11,9 @@ class BuilderTableCreateMartinimultimediaEventsTagsEvents extends Migration
         Schema::create('martinimultimedia_events_events_tags', function($table)
         {
             $table->engine = 'InnoDB';
-            $table->bigInteger('tag_id');
             $table->bigInteger('event_id');
+            $table->bigInteger('tag_id');
             $table->primary(['event_id','tag_id'],'events_tags');
-
         });
     }
     

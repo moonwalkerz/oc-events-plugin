@@ -11,7 +11,7 @@
     - builder_table_create_martinimultimedia_events_categories.php
 1.0.8:
     - 'Create tables for events categories relation'
-    - builder_table_create_martinimultimedia_events_events_categories.php
+    - builder_table_create_martinimultimedia_events_categories_events.php
 1.0.9:
     - 'Create tables for tags'
     - builder_table_create_martinimultimedia_events_tags.php

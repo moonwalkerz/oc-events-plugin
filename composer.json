@@ -1,7 +1,7 @@
 {
-    "name": "inalto/oc-events",
+    "name": "martinimultimedia/events-plugin",
     "type": "october-plugin",
-    "description": "Events Manager for October CMS",
+    "description": "Events Management for October CMS",
     "homepage": "https://github.com/inalto/oc-events",
     "keywords": ["october", "octobercms", "translate"],
     "license": "MIT",

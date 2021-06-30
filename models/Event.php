@@ -19,12 +19,35 @@ class Event extends Model
      */
     public $table = 'martinimultimedia_events_events';
 
+
+    public $jsonable = ['contacts'];
+
     /**
      * @var array Validation rules
      */
     public $rules = [
-        'name'=>'required'
+        'name'=>'required',
+        'excerpt'=>'required'
     ];
+    public $belongsTo = [
+        'venue'=> 'MartiniMultimedia\Events\Models\Venue'
+    ];
+
+    public $belongsToMany = [
+        'categories' => [
+            Category::class,
+            'table' => 'martinimultimedia_events_categories_events',
+            'order' => 'title'
+        ],
+        'tags' => [
+            Tag::class,
+            'table' => 'martinimultimedia_events_events_tags'
+            
+            
+        ]
+    ];
+
+
     public $attachMany = [
         'images' => 'System\Models\File',
         'attachments' => 'System\Models\File'

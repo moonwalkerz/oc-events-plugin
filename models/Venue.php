@@ -17,7 +17,7 @@ class Venue extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'martinimultimedia_events_events';
+    public $table = 'martinimultimedia_events_venues';
 
     /**
      * @var array Validation rules

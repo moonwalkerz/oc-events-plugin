@@ -21,6 +21,7 @@ class BuilderTableCreateMartinimultimediaEventsEvents extends Migration
             $table->string('slug')->nullable();
             $table->text('excerpt')->nullable();
             $table->text('description')->nullable();
+            $table->text('contacts')->nullable();
             $table->integer('venue_id')->nullable();
             $table->boolean('allday')->nullable();
         });

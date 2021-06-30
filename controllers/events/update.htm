@@ -1,7 +1,7 @@
 <?php Block::put('breadcrumb') ?>
     <ul>
-        <li><a href="<?= Backend::url('martinimultimedia/events/events') ?>">Event</a></li>
-        <li><?= e($this->pageTitle) ?></li>
+        <li><a href="<?= Backend::url('martinimultimedia/events/events') ?>"><?= e(ucfirst(trans('martinimultimedia.events::lang.form.events'))) ?></a></li>
+        <li><?= e(trans('martinimultimedia.events::lang.form.update').' '.trans('martinimultimedia.events::lang.form.event')) ?></li>
     </ul>
 <?php Block::endPut() ?>
 
