@@ -19,6 +19,10 @@ class Venue extends Model
      */
     public $table = 'martinimultimedia_events_venues';
 
+    public $jsonable = [
+    'points'
+    ];
+
     /**
      * @var array Validation rules
      */

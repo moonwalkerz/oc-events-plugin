@@ -16,7 +16,9 @@ class BuilderTableCreateMartinimultimediaEventsVenues extends Migration
             $table->timestamp('updated_at')->nullable();
             $table->timestamp('deleted_at')->nullable();
             $table->string('name')->nullable();
-            $table->text('excerpt')->nullable();
+	    $table->string('slug')->nullable();
+	    $table->text('excerpt')->nullable();
+
             $table->text('descrtiption')->nullable();
             $table->text('points')->nullable();
         });

@@ -22,7 +22,9 @@ class Tag extends Model
     public $belongsToMany = [
         'events' => [
             Event::class,
-            'table'=>'martinimultimedia_events_events_tags'
+            'table'=>'martinimultimedia_events_events_tags',
+            'key'      => 'event_id',
+            'otherKey' => 'tag_id'
         ]
     ];
 

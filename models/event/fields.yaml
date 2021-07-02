@@ -44,9 +44,8 @@ fields:
         label: 'martinimultimedia.events::lang.form.tags'
         mode: relation
         nameFrom: name
-        separator: comma
         customTags: true
-        useKey: true
+        useKey: false
         span: full
         type: taglist
 

@@ -25,6 +25,8 @@ class Category extends Model
     public $belongsToMany = [
         'events' => ['MartiniMultimedia\Events\Models\Event',
             'table' => 'martinimultimedia_events_categories_events',
+            'key'      => 'event_id',
+            'otherKey' => 'category_id',
             'order' => 'published_at desc',
 //            'scope' => 'isPublished'
         ]

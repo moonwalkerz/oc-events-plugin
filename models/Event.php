@@ -37,12 +37,15 @@ class Event extends Model
         'categories' => [
             Category::class,
             'table' => 'martinimultimedia_events_categories_events',
+            'key'      => 'category_id',
+            'otherKey' => 'event_id',
             'order' => 'title'
         ],
         'tags' => [
             Tag::class,
-            'table' => 'martinimultimedia_events_events_tags'
-            
+            'table' => 'martinimultimedia_events_events_tags',
+            'key'      => 'tag_id',
+            'otherKey' => 'event_id'            
             
         ]
     ];
