@@ -10,6 +10,7 @@ return [
             "events_order" => "Ordinamento",
             "events_order_description" => "Scegli l'ordine di visualizzazione degli eventi",
             "events_per_page" => "Eventi per pagina",
+            "loadmore" => "Vedi altri",
             "name" => "Lista Eventi",
             "no_events" => "No ci sono eventi al momento",
             "page_number" => "n° Pagina",

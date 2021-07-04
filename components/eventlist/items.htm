@@ -1,0 +1,4 @@
+
+{% for event in events %}
+{% partial __SELF__ ~ '::item'  event = event%}
+{% endfor %}

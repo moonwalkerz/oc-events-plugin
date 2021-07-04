@@ -5,7 +5,8 @@ use BackendAuth;
 use Cms\Classes\Page;
 use Cms\Classes\ComponentBase;
 use MartiniMultimedia\Events\Models\Event as E;
-
+use Input;
+use Log;
 
 /**
  * EventList Component
@@ -23,6 +24,7 @@ class EventList extends ComponentBase
    public $eventPage;
 
    public $pageParam;
+   public $pageNumber;
    public $paginate;
    public $timeline;
    public $categories;
@@ -90,7 +92,7 @@ class EventList extends ComponentBase
                 'title'       => 'martinimultimedia.events::lang.components.list.event_page',
                 'description' => 'martinimultimedia.events::lang.components.list.event_page_description',
                 'type'        => 'dropdown',
-                'default'     => 'press/post',
+                'default'     => 'event/post',
                 'group'       => 'Links',
             ],
             'categories' => [
@@ -144,7 +146,7 @@ class EventList extends ComponentBase
     public function onRender()
     {        
         $this->prepareVars();
-        $this->events = $this->page['events'] = $this->listEvents();
+        
         if ($this->paginate) {
         /*
          * If the page number is not valid, redirect
@@ -156,14 +158,57 @@ class EventList extends ComponentBase
             }
         }
     }
+    /**
+     * Paginate the result set.
+     *
+     * @param Collection $items
+     * @param int        $totalCount
+     *
+     * @return LengthAwarePaginator
+     */
+    protected function onLoadMore()
+    {
+        try {
+            
+
+            $this->prepareVars();
+        } catch (ModelNotFoundException $e) {
+            return $this->controller->run('404');
+        }
+
+        if ($this->pageNumber >= ($lastPage = $this->events->lastPage()) && $this->pageNumber > 1)
+        return [
+            '#loadmore' => '',
+            '@#events' => $this->renderPartial('@items.htm'),
+        ];
+
+        return [
+            '#loadmore' => $this->renderPartial('@loadmore.htm'),
+            '@#events' => $this->renderPartial('@items.htm'),
+        ];
+    }
+
+
+
 
     protected function prepareVars()
     {
+
+        
         $this->pageParam = $this->page['pageParam'] = $this->paramName('pageNumber');
-        $this->paginate = $this->page['paginate'] = $this->paramName('paginate');
-        $this->timeline = $this->page['timeline'] = $this->paramName('timeline');
+        
+        if (Input::get('pageNumber')) {
+        $this->pageNumber = $this->page['pageNumber'] =Input::get('pageNumber');
+        } else {
+        $this->pageNumber = $this->page['pageNumber'] =  $this->property('pageNumber')?$this->property('pageNumber'):1;
+        }
+        $this->paginate = $this->page['paginate'] = $this->property('paginate');
+        $this->timeline = $this->page['timeline'] = $this->property('timeline');
         $this->categories = $this->page['categories']=$this->property('categories');
         $this->no_event_text = $this->page['no_event_text'] = trans('martinimultimedia.events::lang.components.list.no_events');
+        $this->events = $this->page['events'] = $this->listEvents();
+
+        //Log::info($this->paginate." ".$this->paramName('paginate')."-".$this->property('paginate') );
         /*
          * Page links
          */
@@ -178,7 +223,7 @@ class EventList extends ComponentBase
          */
         $isPublished = !$this->checkEditor();
         $events = E::listFrontEnd([
-            'page'       => $this->property('pageNumber'),
+            'page'       => $this->pageNumber,
             'sort'       => $this->property('sortOrder'),
             'perPage'    => $this->property('eventsPerPage'),
             'skip'       => $this->property('skip'),

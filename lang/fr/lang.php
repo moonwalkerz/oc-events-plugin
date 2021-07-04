@@ -10,6 +10,7 @@ return [
             "events_order" => "",
             "events_order_description" => "",
             "events_per_page" => "",
+            "loadmore" => "",
             "name" => "",
             "no_events" => "",
             "page_number" => "",

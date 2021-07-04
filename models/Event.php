@@ -2,7 +2,7 @@
 
 use Model;
 
-
+use Carbon\Carbon;
 
 /**
  * Model
@@ -140,6 +140,7 @@ class Event extends Model
             'page'       => 1,
             'perPage'    => 30,
             'skip'       => 0,
+            'timeline'   => 1,
             'categories'    => '',
             'sort'       => 'date_from',
             'search'     => '',
@@ -159,6 +160,16 @@ class Event extends Model
         //    $query->featured();
        // }
 
+switch ($timeline) 
+{
+    case 1:
+        $query->where('date_from' ,'>=',Carbon::now());
+    break;
+    
+    case 2:
+        $query->where('date_from','<',Carbon::now());
+    break;
+}
         /*
          * Sorting
          */
@@ -205,9 +216,20 @@ class Event extends Model
         //}
         //Log::info('skip'.$skip." ".$query->paginate($perPage, $page)->toSql());
         //dd();
+        switch ($paginate) {
+            case 0:
+                return $query->get();
+            break;
+            case 1:
+                return $query->paginate($perPage, $page);
+            break;
+            case 2:
+                return $query->paginate($perPage, $page);
+            break;
+        }
         //if ($paginate) {
         
-            return $query->paginate($perPage, $page);
+            
         //}   else {
         //    $query->skip($skip);
          //   $query->take($perPage);
