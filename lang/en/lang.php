@@ -1,5 +1,46 @@
 <?php
 return [
+    "components" => [
+        "list" => [
+            "categories" => "Categories",
+            "categories_description" => "Categories filter",
+            "description" => "Show a list of events",
+            "event_page" => "Event Page",
+            "event_page_description" => "Select the event page",
+            "events_order" => "Ordering",
+            "events_order_description" => "Choose the order in which events are displayed",
+            "events_per_page" => "Events per page",
+            "name" => "Event List",
+            "no_events" => "No events at the moment",
+            "page_number" => "Page number",
+            "page_number_description" => "page number to be displayed",
+            "paginate" => "Pagination",
+            "paginate_description" => "Choose the type of pagination",
+            "paginator_full" => "Full",
+            "paginator_incremental" => "Incremental",
+            "paginator_none" => "None",
+            "skip" => "Skip",
+            "skip_description" => "Skip the first n events",
+            "skip_validation" => "A number greater than or equal to zero is required",
+            "timeline" => "Event timeline",
+            "timeline_all" => "All events",
+            "timeline_description" => "Choose which events to display, all, future only, past only.\n",
+            "timeline_next" => "Next events only",
+            "timeline_prev" => "Previous events only"
+        ],
+        "page" => [
+            "d" => "Day",
+            "d_description" => "Day url parameter",
+            "description" => "Individual event page",
+            "m" => "Month\n",
+            "m_description" => "Month url parameter",
+            "name" => "Event",
+            "slug" => "",
+            "slug_description" => "",
+            "y" => "Year",
+            "y_description" => "Year url parameter"
+        ]
+    ],
     "form" => [
         "add" => "Add",
         "allday" => "All day?",
@@ -25,6 +66,7 @@ return [
         "phone" => "Phone",
         "slug" => "Url alias",
         "tag" => "Tag",
+        "tags" => "",
         "telegram" => "Telegram",
         "title" => "Title",
         "to" => "To",

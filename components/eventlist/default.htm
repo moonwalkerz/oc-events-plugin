@@ -1,0 +1,90 @@
+{% set events = __SELF__.events %}
+
+{% if events is empty %}
+    <div class="my-5 text-center empty w-100">{{ no_events_text }}</div>
+{% endif %}
+
+{% for event in events %}
+
+
+<article class="flex flex-wrap md:flex-nowrap shadow-lg rounded-lg p-4 space-x-4 my-4">
+    <div class="w-full md:w-1/3">
+        {% if event.images.first %}
+            <img class="w-full hover:animate-bounce rounded-lg" src="{{event.images.first.path}}" alt="{{event.images.first.title}}" />
+        {% else %}
+            <img class="w-full hover:animate-bounce rounded-lg" src="https://via.placeholder.com/768x1024.jpg" alt="" />
+        {% endif %}
+    </div>
+    <div class="w-full md:w-2/3 flex flex-col">
+        
+        <div class="flex-grow-0">
+            <div class="text-sm text-gray-800">
+                <span class="data"><i class="icon-calendar-light"></i> {{ event.date_from|date('l j F') }} <i class="icon-clock-1"></i> {{ event.date_from|date('G:i') }}</span>
+            </div>
+        </div>
+        <div class="flex-grow prose">
+            <h2 class="font-bold text-black my-2"><a href="{{ event.url }}">{{ event.name }}</a></h2>
+            <p class="mb-2 text-gray-800">{{ event.excerpt|raw }}</p>
+            
+        </div>
+        
+        <div class="flex-grow-0">
+            <p class="mb-2 text-gray-800"><i class="icon-location-1"></i> {{ event.venue.name}}</p>
+                <div class="flex space-x-2">
+                {% for tag in event.tags %}
+                <span class="bg-yellow-500 text-xs text-white font-bold rounded px-2 py-1">
+                    {{tag.name}}
+                </span>
+                {% endfor %}
+                </div>    
+        </div>
+        <div class="flex-grow-0 flex justify-end">
+            <a href="{{event.url}}" class="px-4 py-2 bg-blue-400 hover:bg-blue-600 hover:shadow text-white font-bold text-sm uppercase rounded transition duration-300 ease-in-out">
+                + informazioni
+            </a>
+
+        </div>
+    </div>
+</article>
+{% endfor %}
+
+{% if paginate %}
+  {% if events.lastPage > 1 %}
+  <nav class="pagination-wrapper" aria-label="Navigazione della pagina">
+      <ul class="pagination">
+
+          {% if events.currentPage > 1 %}
+          <li class="page-item">
+              <a class="page-link"
+                  href="{{ this.page.baseFileName|page({ (__SELF__.pageParam): (events.currentPage-1) }) }}">
+                  <svg class="icon icon-primary">
+                      <use xlink:href="/themes/design/assets/svg/sprite.svg#it-chevron-left"></use>
+                  </svg>
+                  <span class="sr-only">Pagina precedente</span>
+              </a>
+          </li>
+          {% endif %}
+
+          {% for page in 1..events.lastPage %}
+          <li class="page-item {{ events.currentPage == page ? 'active' : null }}">
+              <a class="page-link" href="{{ this.page.baseFileName|page({ (__SELF__.pageParam): page }) }}">{{ page }}</a>
+          </li>
+          {% endfor %}
+
+          {% if events.lastPage > events.currentPage %}
+          <li class="page-item">
+              <a class="page-link"
+                  href="{{ this.page.baseFileName|page({ (__SELF__.pageParam): (events.currentPage+1) }) }}">
+                  <span class="sr-only">Pagina successiva</span>
+                  <svg class="icon icon-primary">
+                      <use xlink:href="/themes/design/assets/svg/sprite.svg#it-chevron-right"></use>
+                  </svg>
+              </a>
+          </li>
+
+          {% endif %}
+
+      </ul>
+  </nav>
+  {% endif %}
+{% endif %}
