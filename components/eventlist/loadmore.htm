@@ -1,9 +1,8 @@
 <button
     data-request="onLoadMore"
     data-request-data="{pageNumber: {{pageNumber+1}} }"
-    class="bg-blue-600 py-1 px-2 rounded text-white"
+    class="bg-blue-600 hover:bg-blue-800 py-2 px-4 rounded-full text-white shadow-md mb-4"
     >
-    {{ 'martinimultimedia.events::lang.components.list.loadmore' | trans }}
-
+    <i class="icon-down"></i> {{ 'martinimultimedia.events::lang.components.list.loadmore' | trans }} <i class="icon-down"></i>
 </button>
 

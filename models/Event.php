@@ -82,14 +82,11 @@ class Event extends Model
      */
     public function setUrl($pageName, $controller)
     {
-        $params = [
-            'id'   => $this->id,
-            'slug' => $this->slug,
-        ];
-
+//        $params['id'] = $this->id;
         $params['y'] = $this->date_from->format('Y');
         $params['m'] = $this->date_from->format('m');
         $params['d'] = $this->date_from->format('d');
+        $params['slug'] = $this->slug;
 
         return $this->url = $controller->pageUrl($pageName, $params);
     }
@@ -222,9 +219,11 @@ switch ($timeline)
             break;
             case 1:
                 return $query->paginate($perPage, $page);
+                //return $query->get();
             break;
             case 2:
                 return $query->paginate($perPage, $page);
+                //return $query->get();
             break;
         }
         //if ($paginate) {

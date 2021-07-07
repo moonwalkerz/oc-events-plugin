@@ -206,13 +206,14 @@ class EventList extends ComponentBase
         $this->timeline = $this->page['timeline'] = $this->property('timeline');
         $this->categories = $this->page['categories']=$this->property('categories');
         $this->no_event_text = $this->page['no_event_text'] = trans('martinimultimedia.events::lang.components.list.no_events');
+        $this->eventPage = $this->page['eventPage'] = $this->property('eventPage');
         $this->events = $this->page['events'] = $this->listEvents();
 
         //Log::info($this->paginate." ".$this->paramName('paginate')."-".$this->property('paginate') );
         /*
          * Page links
          */
-        $this->eventPage = $this->page['eventPage'] = $this->property('eventPage');
+
     }
 
     protected function listEvents()
@@ -238,6 +239,8 @@ class EventList extends ComponentBase
         $events->each(function($event) {
             $event->setUrl($this->eventPage, $this->controller);
         });
+
+
         return $events;
     }
     
