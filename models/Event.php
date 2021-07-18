@@ -105,21 +105,19 @@ class Event extends Model
     //
     // Scopes
     //
-/*
+
     public function scopeIsPublished($query)
     {
         return $query
             ->whereNotNull('published')
             ->where('published', true)
-            ->whereNotNull('published_at')
-            ->where('published_at', '<', Carbon::now())
         ;
     }
     public function scopeFeatured($query)
     {
         return $query->where('featured', true);
     }
-*/
+
     /**
      * Lists events for the front end
      *

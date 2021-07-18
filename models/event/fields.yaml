@@ -48,7 +48,6 @@ fields:
         useKey: false
         span: full
         type: taglist
-
     contacts:
         label: 'martinimultimedia.events::lang.form.contacts'
         prompt: 'martinimultimedia.events::lang.form.add'
@@ -100,3 +99,15 @@ fields:
         list: $/martinimultimedia/events/models/venue/columns.yaml
         span: full
         type: recordfinder
+tabs:
+    fields:
+        published:
+            label: 'martinimultimedia.events::lang.form.published'
+            span: auto
+            type: switch
+            tab: 'martinimultimedia.events::lang.form.publication_tab'
+        featured:
+            label: 'martinimultimedia.events::lang.form.featured'
+            span: auto
+            type: switch
+            tab: 'martinimultimedia.events::lang.form.publication_tab'

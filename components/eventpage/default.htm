@@ -11,14 +11,13 @@
         {% endif %}
     </div>
     <div class="w-full md:w-2/3 flex flex-col">
-        
         <div class="flex-grow-0">
             <div class="text-sm text-gray-800">
                 <span class="data"><i class="icon-calendar-light"></i> {{ event.date_from|date('l j F') }} <i class="icon-clock-1"></i> {{ event.date_from|date('G:i') }}</span>
             </div>
         </div>
-        <div class="flex-grow prose">
-            <h2 class="font-bold text-black my-2"><a href="{{ event.url }}">{{ event.name }}</a></h2>
+        <div class="flex-grow prose prose-xl">
+            <h2 class="font-bold text-black my-2">{{ event.name }}</h2>
             <p class="mb-2 text-gray-800">{{ event.excerpt|raw }}</p>
             <p class="mb-2 text-gray-800">{{ event.description|raw }}</p>
         </div>
@@ -41,12 +40,12 @@
         <div id="venue" class="rounded-lg map" style="height:450px"></div>
 </article>
 
-<article class="flex justify-between shadow-lg rounded-lg my-4">
+<article class="flex justify-between shadow-lg rounded-lg mt-4 mb-24">
 
     <div class="bg-gray-800 text-white p-4 rounded-l-lg"><i class="icon-share"></i> Condividi: </div>
 
     <div class="py-2 text-3xl mr-4">
-        <a  href="https://www.facebook.com/sharer/sharer.php?u={{  url_current()|url_encode}}" target="_blank"><i class="icon-facebook"></i></a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{  url_current()|url_encode}}" target="_blank"><i class="icon-facebook"></i></a>
         <a href="https://api.whatsapp.com/send?text={{  url_current()|url_encode}}" target="_blank"><i  class="icon-whatsapp"></i></a>
         <a href="https://t.me/share/url?url={{  url_current()|url_encode}}&text={{release.title|url_encode}}" target="_blank"><i  class="icon-telegram"></i></a>
     </div>

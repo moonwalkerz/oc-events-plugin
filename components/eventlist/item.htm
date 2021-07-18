@@ -15,11 +15,8 @@
             </div>
         
             <h2 class="font-bold text-black my-2"><a href="{{ event.url }}">{{ event.name }}</a></h2>
-            <div class="flex-grow prose mb-2 text-gray-800 md:hidden">
+            <div class="flex-grow prose mb-2 text-gray-800">
                 {{ event.excerpt|raw }}
-            </div>
-            <div class="flex-grow prose mb-2 text-gray-800 hidden md:block">
-                {{ event.description|raw }}
             </div>
             <div class="flex-grow-0">
             <p class="mb-2 text-gray-800"><i class="icon-location-1"></i> {{ event.venue.name}}</p>
@@ -32,7 +29,7 @@
                 </div>    
             </div>
             <div class="flex-grow-0 flex justify-end">
-            <a href="{{event.url}}" class="px-4 py-2 bg-blue-400 hover:bg-blue-600 hover:shadow text-white font-bold text-sm uppercase rounded transition duration-300 ease-in-out">
+            <a href="{{event.url}}" class="px-4 py-2 bg-blu hover:bg-azzurro hover:shadow text-white font-bold text-sm uppercase rounded transition duration-300 ease-in-out">
                 + informazioni
             </a>
             </div>
