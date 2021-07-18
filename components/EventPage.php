@@ -79,18 +79,11 @@ class EventPage extends ComponentBase
         $event = $event->isClassExtendedWith('RainLab.Translate.Behaviors.TranslatableModel')
             ? $event->transWhere('slug', $slug)
             : $event->where('slug', $slug);
-        if (!$this->checkEditor()) {
-            $event = $event->isPublished();
-        }
+        //verify if published
         $event = $event->with('venue')->first();
         return $event;
     }
 
-    protected function checkEditor()
-    {
-        $backendUser = BackendAuth::getUser();
-        return $backendUser && $backendUser->hasAccess('martinimultimedia.events.access_events');
-    }
 
 
 }

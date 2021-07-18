@@ -218,11 +218,11 @@ class EventList extends ComponentBase
 
     protected function listEvents()
     {
-        //$lifestyle = $this->lifestyle ? $this->lifestyle->id : null;
+        
         /*
          * List all the posts, eager load their lifestyles
          */
-        $isPublished = !$this->checkEditor();
+
         $events = E::listFrontEnd([
             'page'       => $this->pageNumber,
             'sort'       => $this->property('sortOrder'),
@@ -243,11 +243,6 @@ class EventList extends ComponentBase
 
         return $events;
     }
-    
-    protected function checkEditor()
-    {
-        $backendUser = BackendAuth::getUser();
-        return $backendUser && $backendUser->hasAccess('martinimultimedia.press.access_events');
-    }
+
 
 }
