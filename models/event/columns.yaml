@@ -9,3 +9,15 @@ columns:
         type: text
         searchable: true
         sortable: true
+    published:
+        label: 'martinimultimedia.events::lang.list.published'
+        type: inetis-list-switch
+        icon: true
+        titleTrue: 'martinimultimedia.events::lang.list.published'
+        titleFalse: 'martinimultimedia.events::lang.list.unpublished'
+        textTrue: 'martinimultimedia.events::lang.list.publish'
+        textFalse: 'martinimultimedia.events::lang.list.unpublish'
+    actions:
+        label: 'martinimultimedia.events::lang.list.actions'
+        type: partial
+        path: ~/plugins/martinimultimedia/events/models/event/_actions.htm

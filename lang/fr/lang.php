@@ -49,6 +49,7 @@ return [
         "choose" => "",
         "contact" => "",
         "contacts" => "",
+        "copy" => "Copie",
         "create" => "",
         "description" => "",
         "email" => "",
@@ -56,6 +57,7 @@ return [
         "events" => "",
         "excerpt" => "",
         "fax" => "",
+        "featured" => "",
         "from" => "",
         "images" => "",
         "lat" => "",
@@ -65,6 +67,8 @@ return [
         "name" => "",
         "pec" => "",
         "phone" => "",
+        "publication_tab" => "",
+        "published" => "",
         "slug" => "",
         "tag" => "",
         "tags" => "",
@@ -75,7 +79,17 @@ return [
         "venue" => "",
         "whatsapp" => ""
     ],
-    "list" => ["date" => "", "name" => "", "slug" => "", "title" => ""],
+    "list" => [
+        "actions" => "",
+        "date" => "",
+        "name" => "",
+        "publish" => "",
+        "published" => "",
+        "slug" => "",
+        "title" => "",
+        "unpublish" => "",
+        "unpublished" => ""
+    ],
     "menu" => ["categories" => "", "events" => "", "tags" => "", "venues" => ""],
     "plugin" => ["description" => "", "name" => "Events"]
 ];

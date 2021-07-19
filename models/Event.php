@@ -23,7 +23,7 @@ class Event extends Model
 
     public $jsonable = ['contacts'];
 
-    
+    public $fillable=['name','published'];
 
 
     /**

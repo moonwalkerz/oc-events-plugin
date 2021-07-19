@@ -49,6 +49,7 @@ return [
         "choose" => "Choose",
         "contact" => "Contact",
         "contacts" => "Contacts",
+        "copy" => "Copy",
         "create" => "Create\n",
         "description" => "Description",
         "email" => "e-mail",
@@ -56,6 +57,7 @@ return [
         "events" => "events",
         "excerpt" => "Excerpt",
         "fax" => "Fax",
+        "featured" => "",
         "from" => "From",
         "images" => "Images",
         "lat" => "Latitude",
@@ -65,6 +67,8 @@ return [
         "name" => "Name",
         "pec" => "pec e-mail",
         "phone" => "Phone",
+        "publication_tab" => "",
+        "published" => "",
         "slug" => "Url alias",
         "tag" => "Tag",
         "tags" => "",
@@ -75,7 +79,17 @@ return [
         "venue" => "",
         "whatsapp" => "WhatsApp"
     ],
-    "list" => ["date" => "Date", "name" => "Name", "slug" => "Url alias", "title" => "Title"],
+    "list" => [
+        "actions" => "Actions",
+        "date" => "Date",
+        "name" => "Name",
+        "publish" => "Publish",
+        "published" => "Published",
+        "slug" => "Url alias",
+        "title" => "Title",
+        "unpublish" => "Unpublish",
+        "unpublished" => "Unpublished"
+    ],
     "menu" => [
         "categories" => "Categories",
         "events" => "Events",
