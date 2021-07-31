@@ -1,6 +1,13 @@
 {% set event = __SELF__.event %}
 {% set venue = __SELF__.event.venue %}
 
+{% put meta %}
+<meta property="og:url"                content="{{''|page}}" />
+<meta property="og:type"               content="article" />
+<meta property="og:title"              content="{{event.name}}" />
+<meta property="og:description"        content="{{ event.excerpt|striptags }}" />
+<meta property="og:image"              content="{{ event.images.first.path|resize(600)}}" />
+{% endput %}
 
 <article class="flex flex-wrap bg-white md:flex-nowrap shadow-lg rounded-lg p-4 space-x-4 my-4">
     <div class="w-full md:w-1/3">
