@@ -11,7 +11,7 @@
 
 <article class="flex flex-wrap bg-white md:flex-nowrap shadow-lg rounded-lg p-4 space-x-4 my-4">
     <div class="w-full md:w-1/3">
-                    {% if event.images.first %}
+        {% if event.images.first %}
             <img class="w-full hover:animate-bounce rounded-lg" src="{{event.images.first.path}}" alt="{{event.images.first.title}}" />
         {% else %}
             <img class="w-full hover:animate-bounce rounded-lg" src="https://via.placeholder.com/768x1024.jpg" alt="" />
