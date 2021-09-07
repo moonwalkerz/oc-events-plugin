@@ -1,9 +1,9 @@
-<?php namespace MartiniMultimedia\Events\Controllers;
+<?php namespace MoonWalkerz\Events\Controllers;
 
 use Backend\Classes\Controller;
 use BackendMenu;
 use Flash;
-use MartiniMultimedia\Events\Models\Event;
+use MoonWalkerz\Events\Models\Event;
 class Events extends Controller
 {
     public $implement = [
@@ -17,7 +17,7 @@ class Events extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('MartiniMultimedia.Events', 'events-item', 'side-event-item');
+        BackendMenu::setContext('MoonWalkerz.Events', 'events-item', 'side-event-item');
     }
 
     public function clone($id)
@@ -37,7 +37,7 @@ class Events extends Controller
 
         $clone = $original->replicate();
         $clone->fill([
-            'name' => trans('martinimultimedia.events::lang.form.copy')." ".$clone->name,
+            'name' => trans('moonwalkerz.events::lang.form.copy')." ".$clone->name,
             'published' => false
         ]);
 

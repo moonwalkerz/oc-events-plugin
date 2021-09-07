@@ -1,6 +1,6 @@
 columns:
     name:
-        label: 'martinimultimedia.events::lang.list.name'
+        label: 'moonwalkerz.events::lang.list.name'
         type: text
         searchable: true
         sortable: true

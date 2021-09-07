@@ -1,14 +1,14 @@
-<?php namespace MartiniMultimedia\Events\Updates;
+<?php namespace MoonWalkerz\Events\Updates;
 
 use Schema;
 use October\Rain\Database\Updates\Migration;
 
-class BuilderTableCreateMartiniMultimediaEventsEventsTags extends Migration
+class BuilderTableCreateMoonWalkerzEventsEventsTags extends Migration
 {
     public function up()
     {
-        Schema::dropIfExists('martinimultimedia_events_events_tags');
-        Schema::create('martinimultimedia_events_events_tags', function($table)
+        Schema::dropIfExists('moonwalkerz_events_events_tags');
+        Schema::create('moonwalkerz_events_events_tags', function($table)
         {
             $table->engine = 'InnoDB';
             $table->bigInteger('event_id');
@@ -19,6 +19,6 @@ class BuilderTableCreateMartiniMultimediaEventsEventsTags extends Migration
     
     public function down()
     {
-        Schema::dropIfExists('martinimultimedia_events_events_tags');
+        Schema::dropIfExists('moonwalkerz_events_events_tags');
     }
 }

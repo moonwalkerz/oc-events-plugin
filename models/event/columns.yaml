@@ -5,19 +5,19 @@ columns:
         searchable: true
         sortable: true
     name:
-        label: 'martinimultimedia.events::lang.list.name'
+        label: 'moonwalkerz.events::lang.list.name'
         type: text
         searchable: true
         sortable: true
     published:
-        label: 'martinimultimedia.events::lang.list.published'
+        label: 'moonwalkerz.events::lang.list.published'
         type: inetis-list-switch
         icon: true
-        titleTrue: 'martinimultimedia.events::lang.list.published'
-        titleFalse: 'martinimultimedia.events::lang.list.unpublished'
-        textTrue: 'martinimultimedia.events::lang.list.publish'
-        textFalse: 'martinimultimedia.events::lang.list.unpublish'
+        titleTrue: 'moonwalkerz.events::lang.list.published'
+        titleFalse: 'moonwalkerz.events::lang.list.unpublished'
+        textTrue: 'moonwalkerz.events::lang.list.publish'
+        textFalse: 'moonwalkerz.events::lang.list.unpublish'
     actions:
-        label: 'martinimultimedia.events::lang.list.actions'
+        label: 'moonwalkerz.events::lang.list.actions'
         type: partial
-        path: ~/plugins/martinimultimedia/events/models/event/_actions.htm
+        path: ~/plugins/moonwalkerz/events/models/event/_actions.htm

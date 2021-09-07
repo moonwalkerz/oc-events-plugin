@@ -1,4 +1,4 @@
-<?php namespace MartiniMultimedia\Events\Models;
+<?php namespace MoonWalkerz\Events\Models;
 
 use Model;
 
@@ -14,7 +14,7 @@ class Category extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'martinimultimedia_events_categories';
+    public $table = 'moonwalkerz_events_categories';
 
     /**
      * @var array Validation rules
@@ -23,8 +23,8 @@ class Category extends Model
     ];
 
     public $belongsToMany = [
-        'events' => ['MartiniMultimedia\Events\Models\Event',
-            'table' => 'martinimultimedia_events_categories_events',
+        'events' => ['MoonWalkerz\Events\Models\Event',
+            'table' => 'moonwalkerz_events_categories_events',
             'key'      => 'event_id',
             'otherKey' => 'category_id',
             'order' => 'published_at desc',

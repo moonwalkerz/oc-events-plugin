@@ -1,4 +1,4 @@
-<?php namespace MartiniMultimedia\Events\Models;
+<?php namespace MoonWalkerz\Events\Models;
 
 use Model;
 
@@ -13,7 +13,7 @@ class Tag extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'martinimultimedia_events_tags';
+    public $table = 'moonwalkerz_events_tags';
 
     public $timestamps=false;
    /**
@@ -22,7 +22,7 @@ class Tag extends Model
     public $belongsToMany = [
         'events' => [
             Event::class,
-            'table'=>'martinimultimedia_events_events_tags',
+            'table'=>'moonwalkerz_events_events_tags',
             'key'      => 'event_id',
             'otherKey' => 'tag_id'
         ]
@@ -40,7 +40,7 @@ class Tag extends Model
      * @var array Validation rules
      */
     public $rules = [
-        'name' => 'required|unique:martinimultimedia_events_tags'
+        'name' => 'required|unique:moonwalkerz_events_tags'
     ];
 
     /**

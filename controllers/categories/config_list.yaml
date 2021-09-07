@@ -1,5 +1,5 @@
-list: $/martinimultimedia/events/models/category/columns.yaml
-modelClass: MartiniMultimedia\Events\Models\Category
+list: $/moonwalkerz/events/models/category/columns.yaml
+modelClass: MoonWalkerz\Events\Models\Category
 title: Categories
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true
@@ -10,4 +10,4 @@ toolbar:
     buttons: list_toolbar
     search:
         prompt: 'backend::lang.list.search_prompt'
-recordUrl: 'martinimultimedia/events/categories/update/:id'
+recordUrl: 'moonwalkerz/events/categories/update/:id'

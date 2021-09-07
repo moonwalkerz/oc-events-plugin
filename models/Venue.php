@@ -1,4 +1,4 @@
-<?php namespace MartiniMultimedia\Events\Models;
+<?php namespace MoonWalkerz\Events\Models;
 
 use Model;
 
@@ -17,7 +17,7 @@ class Venue extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'martinimultimedia_events_venues';
+    public $table = 'moonwalkerz_events_venues';
 
     public $jsonable = [
     'points'
