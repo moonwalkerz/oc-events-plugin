@@ -158,11 +158,15 @@ class Event extends Model
 switch ($timeline) 
 {
     case 1:
+        //next events
         $query->where('date_from' ,'>=',Carbon::now());
+        $query->orWhere('date_to' ,'>=',Carbon::now());
     break;
     
     case 2:
+        //previous events
         $query->where('date_from','<',Carbon::now());
+        $query->where('date_to','<',Carbon::now());
     break;
 }
         /*

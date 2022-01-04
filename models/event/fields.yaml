@@ -12,12 +12,12 @@ fields:
         type: text
     excerpt:
         label: 'martinimultimedia.events::lang.form.excerpt'
-        size: small
+        size: large
         span: full
         type: richeditor
     description:
         label: 'martinimultimedia.events::lang.form.description'
-        size: large
+        size: huge
         span: full
         type: richeditor
     date_from:

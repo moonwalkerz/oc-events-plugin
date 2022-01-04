@@ -198,10 +198,20 @@ class EventList extends ComponentBase
         $this->pageParam = $this->page['pageParam'] = $this->paramName('pageNumber');
         
         if (Input::get('pageNumber')) {
-        $this->pageNumber = $this->page['pageNumber'] =Input::get('pageNumber');
+            $pg = intval(Input::get('pageNumber'));
+            if ($pg < 1) {
+                $pg = 1;
+            };
+            $this->pageNumber = $this->page['pageNumber'] = $pg;
         } else {
-        $this->pageNumber = $this->page['pageNumber'] =  $this->property('pageNumber')?$this->property('pageNumber'):1;
+            $pg=intval($this->property('pageNumber'));
+            if ($pg < 1) {
+                $pg = 1;
+            };
+            $this->pageNumber = $this->page['pageNumber'] = $pg;
         }
+
+        
         $this->paginate = $this->page['paginate'] = $this->property('paginate');
         $this->timeline = $this->page['timeline'] = $this->property('timeline');
         $this->categories = $this->page['categories']=$this->property('categories');
@@ -220,7 +230,7 @@ class EventList extends ComponentBase
     {
         
         /*
-         * List all the posts, eager load their lifestyles
+         * List all the events
          */
 
         $events = E::listFrontEnd([
