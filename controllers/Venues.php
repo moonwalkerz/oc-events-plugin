@@ -1,4 +1,4 @@
-<?php namespace MartiniMultimedia\Events\Controllers;
+<?php namespace MoonWalkerz\Events\Controllers;
 
 use Backend\Classes\Controller;
 use BackendMenu;
@@ -13,6 +13,6 @@ class Venues extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('MartiniMultimedia.Events', 'events-item', 'side-event-venue');
+        BackendMenu::setContext('MoonWalkerz.Events', 'events-item', 'side-event-venue');
     }
 }

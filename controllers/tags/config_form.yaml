@@ -1,10 +1,10 @@
 name: Tags
-form: $/martinimultimedia/events/models/tag/fields.yaml
-modelClass: MartiniMultimedia\Events\Models\Tag
-defaultRedirect: martinimultimedia/events/tags
+form: $/moonwalkerz/events/models/tag/fields.yaml
+modelClass: MoonWalkerz\Events\Models\Tag
+defaultRedirect: moonwalkerz/events/tags
 create:
-    redirect: 'martinimultimedia/events/tags/update/:id'
-    redirectClose: martinimultimedia/events/tags
+    redirect: 'moonwalkerz/events/tags/update/:id'
+    redirectClose: moonwalkerz/events/tags
 update:
-    redirect: martinimultimedia/events/tags
-    redirectClose: martinimultimedia/events/tags
+    redirect: moonwalkerz/events/tags
+    redirectClose: moonwalkerz/events/tags

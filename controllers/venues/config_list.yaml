@@ -1,5 +1,5 @@
-list: $/martinimultimedia/events/models/venue/columns.yaml
-modelClass: MartiniMultimedia\Events\Models\Venue
+list: $/moonwalkerz/events/models/venue/columns.yaml
+modelClass: MoonWalkerz\Events\Models\Venue
 title: Venues
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true
@@ -9,4 +9,4 @@ toolbar:
     buttons: list_toolbar
     search:
         prompt: 'backend::lang.list.search_prompt'
-recordUrl: 'martinimultimedia/events/venues/update/:id'
+recordUrl: 'moonwalkerz/events/venues/update/:id'

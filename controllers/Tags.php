@@ -1,4 +1,4 @@
-<?php namespace MartiniMultimedia\Events\Controllers;
+<?php namespace MoonWalkerz\Events\Controllers;
 
 use Backend\Classes\Controller;
 use BackendMenu;
@@ -11,12 +11,12 @@ class Tags extends Controller
     public $formConfig = 'config_form.yaml';
 
     public $requiredPermissions = [
-        'martinimultimedia.events.access_tags',
+        'moonwalkerz.events.access_tags',
     ];
 
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('MartiniMultimedia.Events', 'events-item', 'side-event-tag');
+        BackendMenu::setContext('MoonWalkerz.Events', 'events-item', 'side-event-tag');
     }
 }

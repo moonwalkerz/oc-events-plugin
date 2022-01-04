@@ -1,10 +1,10 @@
-<?php namespace Martinimultimedia\Events\Components;
+<?php namespace MoonWalkerz\Events\Components;
 
 use Redirect;
 use BackendAuth;
 use Cms\Classes\Page;
 use Cms\Classes\ComponentBase;
-use MartiniMultimedia\Events\Models\Event as E;
+use MoonWalkerz\Events\Models\Event as E;
 use Input;
 use Log;
 
@@ -41,8 +41,8 @@ class EventList extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'martinimultimedia.events::lang.components.list.name',
-            'description' => 'martinimultimedia.events::lang.components.list.description'
+            'name'        => 'moonwalkerz.events::lang.components.list.name',
+            'description' => 'moonwalkerz.events::lang.components.list.description'
         ];
     }
 
@@ -50,54 +50,54 @@ class EventList extends ComponentBase
     {
         return [
             'pageNumber' => [
-                'title'       => 'martinimultimedia.events::lang.components.list.page_number',
-                'description' => 'martinimultimedia.events::lang.components.list.page_number_description',
+                'title'       => 'moonwalkerz.events::lang.components.list.page_number',
+                'description' => 'moonwalkerz.events::lang.components.list.page_number_description',
                 'type'        => 'string',
                 'default'     => '{{ :page }}',
             ],
             'eventsPerPage' => [
-                'title'             => 'martinimultimedia.events::lang.components.list.events_per_page',
+                'title'             => 'moonwalkerz.events::lang.components.list.events_per_page',
                 'type'              => 'string',
                 'validationPattern' => '^[0-9]+$',
-                'validationMessage' => 'martinimultimedia.events::lang.components.list.events_per_page_validation',
+                'validationMessage' => 'moonwalkerz.events::lang.components.list.events_per_page_validation',
                 'default'           => '10',
             ],
             'skip' => [
-                'title'             => 'martinimultimedia.events::lang.components.list.skip',
-                'description' => 'martinimultimedia.events::lang.components.list.skip_description',
+                'title'             => 'moonwalkerz.events::lang.components.list.skip',
+                'description' => 'moonwalkerz.events::lang.components.list.skip_description',
                 'type'              => 'string',
                 'validationPattern' => '^[0-9]+$',
-                'validationMessage' => 'martinimultimedia.events::lang.components.list.skip_validation',
+                'validationMessage' => 'moonwalkerz.events::lang.components.list.skip_validation',
                 'default'           => '0',
             ],
             'paginate' => [
-                'title'             => 'martinimultimedia.events::lang.components.list.paginate',
-                'description'       => 'martinimultimedia.events::lang.components.list.paginate_description',
+                'title'             => 'moonwalkerz.events::lang.components.list.paginate',
+                'description'       => 'moonwalkerz.events::lang.components.list.paginate_description',
                 'type'              => 'dropdown',
                 'default'           => '1',
             ],
             'timeline' => [
-                'title'             => 'martinimultimedia.events::lang.components.list.timeline',
-                'description'       => 'martinimultimedia.events::lang.components.list.timeline_description',
+                'title'             => 'moonwalkerz.events::lang.components.list.timeline',
+                'description'       => 'moonwalkerz.events::lang.components.list.timeline_description',
                 'type'              => 'dropdown',
                 'default'           => '1',
             ],
             'sortOrder' => [
-                'title'       => 'martinimultimedia.events::lang.components.list.events_order',
-                'description' => 'martinimultimedia.events::lang.components.list.events_order_description',
+                'title'       => 'moonwalkerz.events::lang.components.list.events_order',
+                'description' => 'moonwalkerz.events::lang.components.list.events_order_description',
                 'type'        => 'dropdown',
                 'default'     => 'date_from asc'
             ],
             'eventPage' => [
-                'title'       => 'martinimultimedia.events::lang.components.list.event_page',
-                'description' => 'martinimultimedia.events::lang.components.list.event_page_description',
+                'title'       => 'moonwalkerz.events::lang.components.list.event_page',
+                'description' => 'moonwalkerz.events::lang.components.list.event_page_description',
                 'type'        => 'dropdown',
                 'default'     => 'event/post',
                 'group'       => 'Links',
             ],
             'categories' => [
-                'title'       => 'martinimultimedia.events::lang.components.list.categories',
-                'description' => 'martinimultimedia.events::lang.components.list.categories_description',
+                'title'       => 'moonwalkerz.events::lang.components.list.categories',
+                'description' => 'moonwalkerz.events::lang.components.list.categories_description',
                 'type'        => 'string',
                 'default'     => '{{ :categories }}',
             ],
@@ -117,9 +117,9 @@ class EventList extends ComponentBase
     public function getPaginateOptions()
     {
         return [
-                0 => trans('martinimultimedia.events::lang.components.list.paginator_none'),
-                1 => trans('martinimultimedia.events::lang.components.list.paginator_full'),
-                2 => trans('martinimultimedia.events::lang.components.list.paginator_incremental'),
+                0 => trans('moonwalkerz.events::lang.components.list.paginator_none'),
+                1 => trans('moonwalkerz.events::lang.components.list.paginator_full'),
+                2 => trans('moonwalkerz.events::lang.components.list.paginator_incremental'),
             ];
     }
 
@@ -131,9 +131,9 @@ class EventList extends ComponentBase
     public function getTimelineOptions()
     {
         return [
-                0 => trans('martinimultimedia.events::lang.components.list.timeline_all'),
-                1 => trans('martinimultimedia.events::lang.components.list.timeline_next'),
-                2 => trans('martinimultimedia.events::lang.components.list.timeline_prev'),
+                0 => trans('moonwalkerz.events::lang.components.list.timeline_all'),
+                1 => trans('moonwalkerz.events::lang.components.list.timeline_next'),
+                2 => trans('moonwalkerz.events::lang.components.list.timeline_prev'),
             ];
     }
 
@@ -215,7 +215,7 @@ class EventList extends ComponentBase
         $this->paginate = $this->page['paginate'] = $this->property('paginate');
         $this->timeline = $this->page['timeline'] = $this->property('timeline');
         $this->categories = $this->page['categories']=$this->property('categories');
-        $this->no_event_text = $this->page['no_event_text'] = trans('martinimultimedia.events::lang.components.list.no_events');
+        $this->no_event_text = $this->page['no_event_text'] = trans('moonwalkerz.events::lang.components.list.no_events');
         $this->eventPage = $this->page['eventPage'] = $this->property('eventPage');
         $this->events = $this->page['events'] = $this->listEvents();
 

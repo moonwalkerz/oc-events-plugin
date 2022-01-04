@@ -1,28 +1,28 @@
 plugin:
-    name: 'martinimultimedia.events::lang.plugin.name'
-    description: 'martinimultimedia.events::lang.plugin.description'
+    name: 'moonwalkerz.events::lang.plugin.name'
+    description: 'moonwalkerz.events::lang.plugin.description'
     author: 'Martini Multimedia'
     icon: oc-icon-ticket
     homepage: ''
 navigation:
     events-item:
-        label: 'martinimultimedia.events::lang.menu.events'
-        url: martinimultimedia/events/events
+        label: 'moonwalkerz.events::lang.menu.events'
+        url: moonwalkerz/events/events
         icon: icon-ticket
         sideMenu:
             side-event-item:
-                label: 'martinimultimedia.events::lang.menu.events'
-                url: martinimultimedia/events/events
+                label: 'moonwalkerz.events::lang.menu.events'
+                url: moonwalkerz/events/events
                 icon: icon-ticket
             side-event-venue:
-                label: 'martinimultimedia.events::lang.menu.venues'
-                url: martinimultimedia/events/venues
+                label: 'moonwalkerz.events::lang.menu.venues'
+                url: moonwalkerz/events/venues
                 icon: icon-home
             side-event-category:
-                label: 'martinimultimedia.events::lang.menu.categories'
-                url: martinimultimedia/events/categories
+                label: 'moonwalkerz.events::lang.menu.categories'
+                url: moonwalkerz/events/categories
                 icon: icon-list-alt
             side-event-tag:
-                label: 'martinimultimedia.events::lang.menu.tags'
-                url: martinimultimedia/events/tags
+                label: 'moonwalkerz.events::lang.menu.tags'
+                url: moonwalkerz/events/tags
                 icon: icon-tags

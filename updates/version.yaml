@@ -1,23 +1,23 @@
 1.0.1:
     - 'Initialize plugin.'
 1.0.2:
-    - 'Created table martinimultimedia_events_events'
-    - builder_table_create_martinimultimedia_events_events.php
+    - 'Created table moonwalkerz_events_events'
+    - builder_table_create_moonwalkerz_events_events.php
 1.0.3:
-    - 'Created table martinimultimedia_events_venues'
-    - builder_table_create_martinimultimedia_events_venues.php
+    - 'Created table moonwalkerz_events_venues'
+    - builder_table_create_moonwalkerz_events_venues.php
 1.0.7:
     - 'Create tables for categories'
-    - builder_table_create_martinimultimedia_events_categories.php
+    - builder_table_create_moonwalkerz_events_categories.php
 1.0.8:
     - 'Create tables for events categories relation'
-    - builder_table_create_martinimultimedia_events_categories_events.php
+    - builder_table_create_moonwalkerz_events_categories_events.php
 1.0.9:
     - 'Create tables for tags'
-    - builder_table_create_martinimultimedia_events_tags.php
+    - builder_table_create_moonwalkerz_events_tags.php
 1.0.10:
     - 'Create tables for tags events tags relation'
-    - builder_table_create_martinimultimedia_events_events_tags.php
+    - builder_table_create_moonwalkerz_events_events_tags.php
 1.0.11:
-    - 'Updated table martinimultimedia_events_events'
-    - builder_table_update_martinimultimedia_events_events.php
+    - 'Updated table moonwalkerz_events_events'
+    - builder_table_update_moonwalkerz_events_events.php

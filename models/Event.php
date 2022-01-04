@@ -1,4 +1,4 @@
-<?php namespace MartiniMultimedia\Events\Models;
+<?php namespace MoonWalkerz\Events\Models;
 
 use Model;
 
@@ -18,7 +18,7 @@ class Event extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'martinimultimedia_events_events';
+    public $table = 'moonwalkerz_events_events';
 
 
     public $jsonable = ['contacts'];
@@ -31,23 +31,22 @@ class Event extends Model
      */
     public $rules = [
         'name'=>'required',
-        'excerpt'=>'required'
     ];
     public $belongsTo = [
-        'venue'=> 'MartiniMultimedia\Events\Models\Venue'
+        'venue'=> 'MoonWalkerz\Events\Models\Venue'
     ];
 
     public $belongsToMany = [
         'categories' => [
             Category::class,
-            'table' => 'martinimultimedia_events_categories_events',
+            'table' => 'moonwalkerz_events_categories_events',
             'key'      => 'category_id',
             'otherKey' => 'event_id',
             'order' => 'title'
         ],
         'tags' => [
             Tag::class,
-            'table' => 'martinimultimedia_events_events_tags',
+            'table' => 'moonwalkerz_events_events_tags',
             'key'      => 'tag_id',
             'otherKey' => 'event_id'            
             
@@ -147,6 +146,7 @@ class Event extends Model
 
         $query->with('venue');
         $query->with('tags');
+        $query->isPublished();
     //    if ($published) {
        //     $query->isPublished();
 //        }

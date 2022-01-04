@@ -1,10 +1,10 @@
 name: Categories
-form: $/martinimultimedia/events/models/category/fields.yaml
-modelClass: MartiniMultimedia\Events\Models\Category
-defaultRedirect: martinimultimedia/events/categories
+form: $/moonwalkerz/events/models/category/fields.yaml
+modelClass: MoonWalkerz\Events\Models\Category
+defaultRedirect: moonwalkerz/events/categories
 create:
-    redirect: 'martinimultimedia/events/categories/update/:id'
-    redirectClose: martinimultimedia/events/categories
+    redirect: 'moonwalkerz/events/categories/update/:id'
+    redirectClose: moonwalkerz/events/categories
 update:
-    redirect: martinimultimedia/events/categories
-    redirectClose: martinimultimedia/events/categories
+    redirect: moonwalkerz/events/categories
+    redirectClose: moonwalkerz/events/categories

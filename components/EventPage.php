@@ -1,9 +1,9 @@
-<?php namespace Martinimultimedia\Events\Components;
+<?php namespace MoonWalkerz\Events\Components;
 
 use Redirect;
 use BackendAuth;
 use Cms\Classes\ComponentBase;
-use MartiniMultimedia\Events\Models\Event as E;
+use MoonWalkerz\Events\Models\Event as E;
 
 /**
  * Event Component
@@ -15,8 +15,8 @@ class EventPage extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'martinimultimedia.events::lang.components.page.name',
-            'description' => 'martinimultimedia.events::lang.components.page.description'
+            'name'        => 'moonwalkerz.events::lang.components.page.name',
+            'description' => 'moonwalkerz.events::lang.components.page.description'
         ];
     }
 
@@ -24,26 +24,26 @@ class EventPage extends ComponentBase
     {
         return [
             'slug' => [
-                'title'       => 'martinimultimedia.events::lang.componens.page.slug',
-                'description' => 'martinimultimedia.events::lang.componens.page.slug_description',
+                'title'       => 'moonwalkerz.events::lang.componens.page.slug',
+                'description' => 'moonwalkerz.events::lang.componens.page.slug_description',
                 'default'     => '{{ :slug }}',
                 'type'        => 'string'
             ],
             'y' => [
-                'title'       => 'martinimultimedia.events::lang.componens.page.y',
-                'description' => 'martinimultimedia.events::lang.componens.page.y_description',
+                'title'       => 'moonwalkerz.events::lang.componens.page.y',
+                'description' => 'moonwalkerz.events::lang.componens.page.y_description',
                 'default'     => '{{ :y }}',
                 'type'        => 'string'
             ],
             'm' => [
-                'title'       => 'martinimultimedia.events::lang.componens.page.m',
-                'description' => 'martinimultimedia.events::lang.componens.page.m_description',
+                'title'       => 'moonwalkerz.events::lang.componens.page.m',
+                'description' => 'moonwalkerz.events::lang.componens.page.m_description',
                 'default'     => '{{ :m }}',
                 'type'        => 'string'
             ],
             'd' => [
-                'title'       => 'martinimultimedia.events::lang.componens.page.d',
-                'description' => 'martinimultimedia.events::lang.componens.page.d_description',
+                'title'       => 'moonwalkerz.events::lang.componens.page.d',
+                'description' => 'moonwalkerz.events::lang.componens.page.d_description',
                 'default'     => '{{ :d }}',
                 'type'        => 'string'
             ]

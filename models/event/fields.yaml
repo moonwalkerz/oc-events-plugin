@@ -1,16 +1,17 @@
 fields:
     name:
-        label: 'martinimultimedia.events::lang.form.name'
+        label: 'moonwalkerz.events::lang.form.name'
         span: auto
         type: text
     slug:
-        label: 'martinimultimedia.events::lang.form.slug'
+        label: 'moonwalkerz.events::lang.form.slug'
         span: auto
         preset:
             field: name
             type: slug
         type: text
     excerpt:
+<<<<<<< HEAD
         label: 'martinimultimedia.events::lang.form.excerpt'
         size: large
         span: full
@@ -18,20 +19,29 @@ fields:
     description:
         label: 'martinimultimedia.events::lang.form.description'
         size: huge
+=======
+        label: 'moonwalkerz.events::lang.form.excerpt'
+        size: small
+        span: full
+        type: richeditor
+    description:
+        label: 'moonwalkerz.events::lang.form.description'
+        size: large
+>>>>>>> f83d40bf93ebff7ea1f67d21daa45c06c311b41d
         span: full
         type: richeditor
     date_from:
-        label: 'martinimultimedia.events::lang.form.from'
+        label: 'moonwalkerz.events::lang.form.from'
         mode: datetime
         span: auto
         type: datepicker
     date_to:
-        label: 'martinimultimedia.events::lang.form.to'
+        label: 'moonwalkerz.events::lang.form.to'
         mode: datetime
         span: auto
         type: datepicker
     allday:
-        label: 'martinimultimedia.events::lang.form.allday'
+        label: 'moonwalkerz.events::lang.form.allday'
         span: auto
         type: switch
     categories:
@@ -41,7 +51,7 @@ fields:
         span: auto
         type: relation
     tags:
-        label: 'martinimultimedia.events::lang.form.tags'
+        label: 'moonwalkerz.events::lang.form.tags'
         mode: relation
         nameFrom: name
         customTags: true
@@ -49,8 +59,8 @@ fields:
         span: full
         type: taglist
     contacts:
-        label: 'martinimultimedia.events::lang.form.contacts'
-        prompt: 'martinimultimedia.events::lang.form.add'
+        label: 'moonwalkerz.events::lang.form.contacts'
+        prompt: 'moonwalkerz.events::lang.form.add'
         span: full
         type: repeater
         form:
@@ -58,24 +68,24 @@ fields:
                 type:
                     label: Dropdown
                     options:
-                        0: 'martinimultimedia.events::lang.form.choose'
-                        email: 'martinimultimedia.events::lang.form.email'
-                        pec: 'martinimultimedia.events::lang.form.pec'
-                        phone: 'martinimultimedia.events::lang.form.phone'
-                        cell: 'martinimultimedia.events::lang.form.mobile'
-                        fax: 'martinimultimedia.events::lang.form.fax'
-                        whatsapp: 'martinimultimedia.events::lang.form.whatsapp'
-                        telegram: 'martinimultimedia.events::lang.form.telegram'
+                        0: 'moonwalkerz.events::lang.form.choose'
+                        email: 'moonwalkerz.events::lang.form.email'
+                        pec: 'moonwalkerz.events::lang.form.pec'
+                        phone: 'moonwalkerz.events::lang.form.phone'
+                        cell: 'moonwalkerz.events::lang.form.mobile'
+                        fax: 'moonwalkerz.events::lang.form.fax'
+                        whatsapp: 'moonwalkerz.events::lang.form.whatsapp'
+                        telegram: 'moonwalkerz.events::lang.form.telegram'
                     showSearch: true
                     span: auto
-                    placeholder: 'martinimultimedia.events::lang.form.choose'
+                    placeholder: 'moonwalkerz.events::lang.form.choose'
                     type: dropdown
                 contact:
-                    label: 'martinimultimedia.events::lang.form.contact'
+                    label: 'moonwalkerz.events::lang.form.contact'
                     span: auto
                     type: text
     images:
-        label: 'martinimultimedia.events::lang.form.images'
+        label: 'moonwalkerz.events::lang.form.images'
         mode: image
         useCaption: true
         thumbOptions:
@@ -84,7 +94,7 @@ fields:
         span: full
         type: fileupload
     attachments:
-        label: 'martinimultimedia.events::lang.form.attachments'
+        label: 'moonwalkerz.events::lang.form.attachments'
         mode: file
         useCaption: true
         thumbOptions:
@@ -93,21 +103,21 @@ fields:
         span: full
         type: fileupload
     venue:
-        label: 'martinimultimedia.events::lang.form.venue'
+        label: 'moonwalkerz.events::lang.form.venue'
         nameFrom: name
         descriptionFrom: description
-        list: $/martinimultimedia/events/models/venue/columns.yaml
+        list: $/moonwalkerz/events/models/venue/columns.yaml
         span: full
         type: recordfinder
 tabs:
     fields:
         published:
-            label: 'martinimultimedia.events::lang.form.published'
+            label: 'moonwalkerz.events::lang.form.published'
             span: auto
             type: switch
-            tab: 'martinimultimedia.events::lang.form.publication_tab'
+            tab: 'moonwalkerz.events::lang.form.publication_tab'
         featured:
-            label: 'martinimultimedia.events::lang.form.featured'
+            label: 'moonwalkerz.events::lang.form.featured'
             span: auto
             type: switch
-            tab: 'martinimultimedia.events::lang.form.publication_tab'
+            tab: 'moonwalkerz.events::lang.form.publication_tab'

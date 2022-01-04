@@ -5,12 +5,12 @@ columns:
         searchable: true
         sortable: true
     slug:
-        label: 'martinimultimedia.events::lang.list.slug'
+        label: 'moonwalkerz.events::lang.list.slug'
         type: text
         searchable: true
         sortable: true
     title:
-        label: 'martinimultimedia.events::lang.list.title'
+        label: 'moonwalkerz.events::lang.list.title'
         type: text
         searchable: true
         sortable: true

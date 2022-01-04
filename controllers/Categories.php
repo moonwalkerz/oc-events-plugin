@@ -1,4 +1,4 @@
-<?php namespace MartiniMultimedia\Events\Controllers;
+<?php namespace MoonWalkerz\Events\Controllers;
 
 use Backend\Classes\Controller;
 use BackendMenu;
@@ -16,12 +16,12 @@ class Categories extends Controller
     public $reorderConfig = 'config_reorder.yaml';
     
     public $requiredPermissions = [
-        'martinimultimedia.events.access_categories',
+        'moonwalkerz.events.access_categories',
     ];
 
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('MartiniMultimedia.Events', 'events-item', 'side-event-category');
+        BackendMenu::setContext('MoonWalkerz.Events', 'events-item', 'side-event-category');
     }
 }

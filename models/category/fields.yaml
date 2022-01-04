@@ -1,17 +1,17 @@
 fields:
     title:
-        label: 'martinimultimedia.events::lang.form.title'
+        label: 'moonwalkerz.events::lang.form.title'
         span: auto
         type: text
     slug:
-        label: 'martinimultimedia.events::lang.form.slug'
+        label: 'moonwalkerz.events::lang.form.slug'
         span: auto
         preset:
             field: title
             type: slug
         type: text
     description:
-        label: 'martinimultimedia.events::lang.form.description'
+        label: 'moonwalkerz.events::lang.form.description'
         size: large
         span: full
         type: richeditor
