@@ -11,23 +11,13 @@ fields:
             type: slug
         type: text
     excerpt:
-<<<<<<< HEAD
-        label: 'martinimultimedia.events::lang.form.excerpt'
-        size: large
-        span: full
-        type: richeditor
-    description:
-        label: 'martinimultimedia.events::lang.form.description'
-        size: huge
-=======
         label: 'moonwalkerz.events::lang.form.excerpt'
-        size: small
+        size: huge
         span: full
         type: richeditor
     description:
         label: 'moonwalkerz.events::lang.form.description'
-        size: large
->>>>>>> f83d40bf93ebff7ea1f67d21daa45c06c311b41d
+        size: giant
         span: full
         type: richeditor
     date_from:

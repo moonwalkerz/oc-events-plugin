@@ -1,15 +1,15 @@
 <article class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-6xl mb-4">
     <div class="md:flex">
 
-        <div class="md:flex-shrink-0">
+        <div class="w-full md:w-1/2 bg-gray-800">
             {% if event.images.first %}
-            <a href="{{event.url}}"><img class="h-64 w-full object-cover md:h-full md:w-64" src="{{event.images.first.path|resize(768)}}" alt="{{event.images.first.title}}" /></a>
+            <a href="{{event.url}}"><img class="w-full" src="{{event.images.first.path|resize(768)}}" alt="{{event.images.first.title}}" /></a>
             {% else %}
                 <img class="w-full hover:animate-bounce rounded-lg" src="https://via.placeholder.com/768x1024.jpg" alt="" />
             {% endif %}
         </div>
 
-        <div class="w-full flex flex-col p-2 md:p-4">
+        <div class="w-full md:w-1/2 flex flex-col p-2 md:p-4">
             <div class="text-sm mt-2 text-gray-800">
                 <span class="data"><i class="icon-calendar-light"></i> {{ event.date_from|date('l j F') }} <i class="icon-clock-1"></i> {{ event.date_from|date('G:i') }}</span>
             </div>
@@ -20,11 +20,11 @@
             </div>
             <div class="flex-grow-0">
             <p class="mb-2 text-gray-800"><i class="icon-location-1"></i> {{ event.venue.name}}</p>
-                <div class="flex space-x-2">
+                <div class="flex space-x-3">
                 {% for tag in event.tags %}
-                <span class="bg-yellow-500 text-xs text-white font-bold rounded px-2 py-1">
+                <a href="{{tag.url}}" class="bg-yellow-500 text-xs text-white font-bold rounded px-3 py-2">
                     {{tag.name}}
-                </span>
+                </a>
                 {% endfor %}
                 </div>    
             </div>

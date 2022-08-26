@@ -1,4 +1,6 @@
-<?php namespace MoonWalkerz\Events\Components;
+<?php
+
+namespace MoonWalkerz\Events\Components;
 
 use Redirect;
 use BackendAuth;
@@ -18,24 +20,29 @@ class EventList extends ComponentBase
     public $events;
 
     /**
-    * Reference to the page name for linking to posts.
-    * @var string
-    */
-   public $eventPage;
+     * Reference to the page name for linking to posts.
+     * @var string
+     */
+    public $eventPage;
 
-   public $pageParam;
-   public $pageNumber;
-   public $paginate;
-   public $timeline;
-   public $categories;
+    public $pageParam;
+    public $pageNumber;
+    public $paginate;
+    public $timeline;
+    public $categories;
+    public $tags;
+    public $tag;
 
-   public $no_event_text;
+    public $tagsPage;
+    public $categoriesPage;
+
+    public $no_event_text;
 
     /**
-    * If the post list should be ordered by another attribute.
-    * @var string
-    */
-   public $sortOrder;
+     * If the post list should be ordered by another attribute.
+     * @var string
+     */
+    public $sortOrder;
 
 
     public function componentDetails()
@@ -101,10 +108,40 @@ class EventList extends ComponentBase
                 'type'        => 'string',
                 'default'     => '{{ :categories }}',
             ],
+            'categoriesPage' => [
+                'title'       => 'moonwalkerz.events::lang.components.list.categories_page',
+                'description' => 'moonwalkerz.events::lang.components.list.categories_page_description',
+                'type'        => 'dropdown',
+                'default'     => 'categories/post',
+                'group'       => 'Links',
+            ],
+            'tags' => [
+                'title'       => 'moonwalkerz.events::lang.components.list.tags',
+                'description' => 'moonwalkerz.events::lang.components.list.tags_description',
+                'type'        => 'string',
+                'default'     => '{{ :tags }}',
+            ],
+            'tagsPage' => [
+                'title'       => 'moonwalkerz.events::lang.components.list.tags_page',
+                'description' => 'moonwalkerz.events::lang.components.list.tags_page_description',
+                'type'        => 'dropdown',
+                'default'     => 'tags/post',
+                'group'       => 'Links',
+            ],
         ];
     }
 
     public function getEventPageOptions()
+    {
+        return Page::sortBy('baseFileName')->lists('baseFileName', 'baseFileName');
+    }
+
+    public function getCategoriesPageOptions()
+    {
+        return Page::sortBy('baseFileName')->lists('baseFileName', 'baseFileName');
+    }
+
+    public function getTagsPageOptions()
     {
         return Page::sortBy('baseFileName')->lists('baseFileName', 'baseFileName');
     }
@@ -117,10 +154,10 @@ class EventList extends ComponentBase
     public function getPaginateOptions()
     {
         return [
-                0 => trans('moonwalkerz.events::lang.components.list.paginator_none'),
-                1 => trans('moonwalkerz.events::lang.components.list.paginator_full'),
-                2 => trans('moonwalkerz.events::lang.components.list.paginator_incremental'),
-            ];
+            0 => trans('moonwalkerz.events::lang.components.list.paginator_none'),
+            1 => trans('moonwalkerz.events::lang.components.list.paginator_full'),
+            2 => trans('moonwalkerz.events::lang.components.list.paginator_incremental'),
+        ];
     }
 
     /**
@@ -131,10 +168,10 @@ class EventList extends ComponentBase
     public function getTimelineOptions()
     {
         return [
-                0 => trans('moonwalkerz.events::lang.components.list.timeline_all'),
-                1 => trans('moonwalkerz.events::lang.components.list.timeline_next'),
-                2 => trans('moonwalkerz.events::lang.components.list.timeline_prev'),
-            ];
+            0 => trans('moonwalkerz.events::lang.components.list.timeline_all'),
+            1 => trans('moonwalkerz.events::lang.components.list.timeline_next'),
+            2 => trans('moonwalkerz.events::lang.components.list.timeline_prev'),
+        ];
     }
 
     public function getSortOrderOptions()
@@ -143,18 +180,19 @@ class EventList extends ComponentBase
     }
 
 
-    public function onRender()
-    {        
+    public function onRun()
+    {
         $this->prepareVars();
+
         
         if ($this->paginate) {
-        /*
+            /*
          * If the page number is not valid, redirect
          */
-        if ($pageNumberParam = $this->paramName('pageNumber')) {
-            $currentPage = $this->property('pageNumber');
-            if ($currentPage > ($lastPage = $this->events->lastPage()) && $currentPage > 1)
-                return Redirect::to($this->currentPageUrl([$pageNumberParam => $lastPage]));
+            if ($pageNumberParam = $this->paramName('pageNumber')) {
+                $currentPage = $this->property('pageNumber');
+                if ($currentPage > ($lastPage = $this->events->lastPage()) && $currentPage > 1)
+                    return Redirect::to($this->currentPageUrl([$pageNumberParam => $lastPage]));
             }
         }
     }
@@ -169,18 +207,16 @@ class EventList extends ComponentBase
     protected function onLoadMore()
     {
         try {
-            
-
             $this->prepareVars();
         } catch (ModelNotFoundException $e) {
             return $this->controller->run('404');
         }
 
         if ($this->pageNumber >= ($lastPage = $this->events->lastPage()) && $this->pageNumber > 1)
-        return [
-            '#loadmore' => '',
-            '@#events' => $this->renderPartial('@items.htm'),
-        ];
+            return [
+                '#loadmore' => '',
+                '@#events' => $this->renderPartial('@items.htm'),
+            ];
 
         return [
             '#loadmore' => $this->renderPartial('@loadmore.htm'),
@@ -194,9 +230,8 @@ class EventList extends ComponentBase
     protected function prepareVars()
     {
 
-        
         $this->pageParam = $this->page['pageParam'] = $this->paramName('pageNumber');
-        
+
         if (Input::get('pageNumber')) {
             $pg = intval(Input::get('pageNumber'));
             if ($pg < 1) {
@@ -204,55 +239,70 @@ class EventList extends ComponentBase
             };
             $this->pageNumber = $this->page['pageNumber'] = $pg;
         } else {
-            $pg=intval($this->property('pageNumber'));
+            $pg = intval($this->property('pageNumber'));
             if ($pg < 1) {
                 $pg = 1;
             };
             $this->pageNumber = $this->page['pageNumber'] = $pg;
         }
 
-        
+    
         $this->paginate = $this->page['paginate'] = $this->property('paginate');
         $this->timeline = $this->page['timeline'] = $this->property('timeline');
-        $this->categories = $this->page['categories']=$this->property('categories');
+        $this->categories = $this->page['categories'] = $this->property('categories');
+        $this->tags = $this->page['tags'] = $this->property('tags');
+
         $this->no_event_text = $this->page['no_event_text'] = trans('moonwalkerz.events::lang.components.list.no_events');
         $this->eventPage = $this->page['eventPage'] = $this->property('eventPage');
+        $this->tagsPage = $this->page['tagsPage'] = $this->property('tagsPage');
+        $this->categoriesPage = $this->page['categoriesPage'] = $this->property('categoriesPage');
         $this->events = $this->page['events'] = $this->listEvents();
 
         //Log::info($this->paginate." ".$this->paramName('paginate')."-".$this->property('paginate') );
         /*
          * Page links
          */
-
     }
 
     protected function listEvents()
     {
-        
+
         /*
          * List all the events
          */
 
-        $events = E::listFrontEnd([
+       
+        $options = [
             'page'       => $this->pageNumber,
             'sort'       => $this->property('sortOrder'),
             'perPage'    => $this->property('eventsPerPage'),
             'skip'       => $this->property('skip'),
             'timeline'   => $this->property('timeline'),
             'paginate'   => $this->property('paginate'),
-            'categories'    => array_map('trim',explode(",",$this->property('categories'))),
+            'categories'    => !empty($this->property('categories'))?array_map('trim', str_contains($this->property('categories'),',')?explode(",", $this->property('categories')):[$this->property('categories')]):[],
+            'tags'    => !empty($this->property('tags'))?array_map('trim', str_contains($this->property('tags'),',')?explode(",", $this->property('tags')):[$this->property('tags')]):[],
             'search'     => trim(input('search'))
-        ]);
+        ];
+        //ray($this->property('tags'));
+        //ray(str_contains($this->property('tags'),',')?explode(",", $this->property('tags')):[$this->property('tags')]);
+        //ray($options);
+        $events = E::listFrontEnd($options);
+
         /*
          * Add a "url" helper attribute for linking to each post and lifestyle
          */
-        $events->each(function($event) {
+        $events->each(function ($event) {
+            ray($event);
             $event->setUrl($this->eventPage, $this->controller);
+            $event->tags->each(function ($tag) {
+                ray($tag);
+                $tag->setUrl($this->tagsPage, $this->controller);
+            });
         });
 
+        
 
         return $events;
     }
-
-
 }
+

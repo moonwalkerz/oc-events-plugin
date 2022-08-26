@@ -9,3 +9,8 @@ columns:
         type: text
         searchable: true
         sortable: true
+    slug:
+        label: url
+        type: text
+        searchable: true
+        sortable: true

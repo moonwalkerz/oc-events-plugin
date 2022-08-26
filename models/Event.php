@@ -1,4 +1,6 @@
-<?php namespace MoonWalkerz\Events\Models;
+<?php
+
+namespace MoonWalkerz\Events\Models;
 
 use Model;
 
@@ -10,10 +12,10 @@ use Carbon\Carbon;
 class Event extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-    
+
     use \October\Rain\Database\Traits\SoftDelete;
 
-    protected $dates = ['date_from','date_to','deleted_at','created_at','updated_at'];
+    protected $dates = ['date_from', 'date_to', 'deleted_at', 'created_at', 'updated_at'];
 
     /**
      * @var string The database table used by the model.
@@ -23,17 +25,17 @@ class Event extends Model
 
     public $jsonable = ['contacts'];
 
-    public $fillable=['name','published'];
+    public $fillable = ['name', 'published'];
 
 
     /**
      * @var array Validation rules
      */
     public $rules = [
-        'name'=>'required',
+        'name' => 'required',
     ];
     public $belongsTo = [
-        'venue'=> 'MoonWalkerz\Events\Models\Venue'
+        'venue' => 'MoonWalkerz\Events\Models\Venue'
     ];
 
     public $belongsToMany = [
@@ -48,8 +50,8 @@ class Event extends Model
             Tag::class,
             'table' => 'moonwalkerz_events_events_tags',
             'key'      => 'tag_id',
-            'otherKey' => 'event_id'            
-            
+            'otherKey' => 'event_id'
+
         ]
     ];
 
@@ -81,7 +83,7 @@ class Event extends Model
      */
     public function setUrl($pageName, $controller)
     {
-//        $params['id'] = $this->id;
+        //        $params['id'] = $this->id;
         $params['y'] = $this->date_from->format('Y');
         $params['m'] = $this->date_from->format('m');
         $params['d'] = $this->date_from->format('d');
@@ -109,8 +111,7 @@ class Event extends Model
     {
         return $query
             ->whereNotNull('published')
-            ->where('published', true)
-        ;
+            ->where('published', true);
     }
     public function scopeFeatured($query)
     {
@@ -135,40 +136,40 @@ class Event extends Model
             'perPage'    => 30,
             'skip'       => 0,
             'timeline'   => 1,
-            'categories'    => '',
             'sort'       => 'date_from',
             'search'     => '',
             'paginate'  => true,
             'exceptPost' => null,
         ], $options));
 
+        //ray($tags);
+        //ray($tags);
         $searchableFields = ['name', 'slug',  'content'];
 
         $query->with('venue');
         $query->with('tags');
         $query->isPublished();
-    //    if ($published) {
-       //     $query->isPublished();
-//        }
+        //    if ($published) {
+        //     $query->isPublished();
+        //        }
 
-       // if ($featured_only) {
+        // if ($featured_only) {
         //    $query->featured();
-       // }
+        // }
 
-switch ($timeline) 
-{
-    case 1:
-        //next events
-        $query->where('date_from' ,'>=',Carbon::now());
-        $query->orWhere('date_to' ,'>=',Carbon::now());
-    break;
-    
-    case 2:
-        //previous events
-        $query->where('date_from','<',Carbon::now());
-        $query->where('date_to','<',Carbon::now());
-    break;
-}
+        switch ($timeline) {
+            case 1:
+                //next events
+                $query->where('date_from', '>=', Carbon::now());
+                $query->orWhere('date_to', '>=', Carbon::now());
+                break;
+
+            case 2:
+                //previous events
+                $query->where('date_from', '<', Carbon::now());
+                $query->where('date_to', '<', Carbon::now());
+                break;
+        }
         /*
          * Sorting
          */
@@ -194,13 +195,14 @@ switch ($timeline)
         /*
         * filter by categories
         */
-        //dd($categories);
-        if(!empty($categories)&&!empty($categories[0])) {
-            $query->whereHas('categories', function($q) use ($categories){
-              //  dd($categories);
-                $q->whereIn('slug', $categories);
-            }); 
-        }
+
+        $query->hasCategories($categories);
+
+
+        /*
+        * filter by tags
+        */
+        $query->hasTags($tags);
 
         /*
          * Search
@@ -210,7 +212,7 @@ switch ($timeline)
             $query->searchWhere($search, $searchableFields);
         }
 
-      
+
         //if ($skip) {
         //}
         //Log::info('skip'.$skip." ".$query->paginate($perPage, $page)->toSql());
@@ -218,28 +220,50 @@ switch ($timeline)
         switch ($paginate) {
             case 0:
                 return $query->get();
-            break;
+                break;
             case 1:
                 return $query->paginate($perPage, $page);
                 //return $query->get();
-            break;
+                break;
             case 2:
                 return $query->paginate($perPage, $page);
                 //return $query->get();
-            break;
+                break;
+            case 3:
+                return $query->toSql();
+                //return $query->get();
+                break;
+
         }
         //if ($paginate) {
-        
-            
+
+
         //}   else {
         //    $query->skip($skip);
-         //   $query->take($perPage);
-    
-           // return $query->get();
+        //   $query->take($perPage);
+
+        // return $query->get();
         //}
-        
-        
+
+
     }
+
+    public function scopeHasTags($query, $tags)
+    {
+        if(!count($tags)) return $query;
+        return $query->whereHas('tags', function ($q) use ($tags) {
+            $q->whereIn('slug', $tags);
+        });
+    }
+
+    public function scopeHasCategories($query, $categories)
+    {
+        if(!count($categories)) return $query;
+        return $query->whereHas('categories', function ($q) use ($categories) {
+            $q->whereIn('slug', $categories);
+        });
+    }
+
 
     //
     // Options
@@ -264,7 +288,4 @@ switch ($timeline)
     {
         return self::getTagsArrayIdOptions($value, $formData);
     }
-
-
-
 }

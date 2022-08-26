@@ -62,6 +62,22 @@ class Tag extends Model
     {
         $this->slug = str_slug($this->name);
     }
+    /**
+     * Sets the "url" attribute with a URL to this object
+     * @param string $pageName
+     * @param Cms\Classes\Controller $controller
+     */
+    public function setUrl($pageName, $controller)
+    {
+
+        ray($controller);
+        $params['tags'] = $this->slug;
+
+        
+        return $this->url = $controller->pageUrl($pageName, $params);
+    }
+
+
         /**
      * Convert tag names to lower case
      */
