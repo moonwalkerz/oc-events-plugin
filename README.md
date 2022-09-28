@@ -21,6 +21,14 @@ Install is coming soon
 
 Documentation is coming soon
 
+## 🤑 Support Us 🤑
+
+These codes make your life easier and you avoid wasting time?\
+Give us some RedBull!
+
+BUSD(BEP20)\
+0x367B9207ACBC30022F9A7262320E36661D7Ffeb5
+
 ## ✉️ Contact Us ✉️ 
 
 Do you have any suggestions?\
