@@ -4,27 +4,27 @@
 
 Description is coming soon
 
-## Features
+## 🔥 Features 🔥
 
 - Features is coming soon
 - Features is coming soon
 
-## Dependencies
+## 💊 Dependencies 💊
 
 Dependencies is coming soon
 
-## Install
+## 🚀 Install 🚀
 
 Install is coming soon
 
-## Documentation 
+## ⚙️ Documentation ⚙️
 
 Documentation is coming soon
 
-## Contact Us
+## ✉️ Contact Us ✉️ 
 
 Do you have any suggestions?\
 Do you need to customise this plugin?
 
-Mail: webmaster@moonwalkerz.dev
+Mail: webmaster@moonwalkerz.dev\
 Telegram: @MoonWalkerzDev
