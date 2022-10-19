@@ -97,18 +97,6 @@ return [
         "access_events" => "Accès aux événements ",
         "access_tags" => "Accès aux étiquettes",
         "access_venues" => "Accès aux lieux",
-        "create_categories" => "Créer catégories",
-        "create_events" => "Créer événements ",
-        "create_tags" => "Créer étiquettes",
-        "create_venues" => "Créer lieux",
-        "delete_categories" => "Effacer catégories",
-        "delete_events" => "Effacer événements ",
-        "delete_tags" => "Effacer étiquettes",
-        "delete_venues" => "Effacer lieux",
-        "edit_categories" => "Modifier catégories",
-        "edit_events" => "Modifier événements ",
-        "edit_tags" => "Modifier étiquettes",
-        "edit_venues" => "Modifier événements ",
         "events_tab" => "Événements"
     ],
     "plugin" => ["description" => "", "name" => "Events"]

@@ -14,6 +14,10 @@ class Events extends Controller
     public $listConfig = 'config_list.yaml';
     public $formConfig = 'config_form.yaml';
 
+    public $requiredPermissions = [
+        'moonwalkerz.events.access_events',
+    ];
+
     public function __construct()
     {
         parent::__construct();

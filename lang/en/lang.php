@@ -102,18 +102,6 @@ return [
         "access_events" => "Access events",
         "access_tags" => "Access tags",
         "access_venues" => "Access venues",
-        "create_categories" => "Create categories",
-        "create_events" => "Create events",
-        "create_tags" => "Create tags",
-        "create_venues" => "Create venues",
-        "delete_categories" => "Delete categories",
-        "delete_events" => "Delete events",
-        "delete_tags" => "Delete tags",
-        "delete_venues" => "Delete venues",
-        "edit_categories" => "Edit categories",
-        "edit_events" => "Edit events",
-        "edit_tags" => "Edit tags",
-        "edit_venues" => "Edit events",
         "events_tab" => "Events"
     ],
     "plugin" => ["description" => "Event manager", "name" => "Events"]

@@ -10,7 +10,7 @@ navigation:
         url: moonwalkerz/events/events
         icon: icon-ticket
         permissions:
-            - 'moonwalkerz.events.access_events'
+            - 'moonwalkerz.events.*'
         sideMenu:
             side-event-item:
                 label: 'moonwalkerz.events::lang.menu.events'
