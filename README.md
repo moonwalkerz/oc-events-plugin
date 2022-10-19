@@ -2,20 +2,29 @@
 
 # Events | October CMS
 
-Description is coming soon
+MoonWalkerz present "Events"! A simple event plugin for October CMS. this plugin allows you to create and publish events on your website. What more do you want?
 
 ## 🔥 Features 🔥
 
-- Features is coming soon
-- Features is coming soon
+- Fully manageable from backend.
+- Add and manage multiple categories.
+- Add and manage multiple locations.
+- Add and manage multiple tags.
+- Add and manage mutiple contacts.
+- You can set the start and end of the event.
 
 ## 💊 Dependencies 💊
 
-Dependencies is coming soon
+this plugin needs the following dependencies:
+- Rainlab.Translate
 
 ## 🚀 Install 🚀
 
-Install is coming soon
+You can install this plugin with this command:
+
+```
+composer require moonwalkerz/oc-events
+```
 
 ## ⚙️ Documentation ⚙️
 
