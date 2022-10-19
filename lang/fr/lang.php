@@ -99,5 +99,5 @@ return [
         "access_venues" => "Accès aux lieux",
         "events_tab" => "Événements"
     ],
-    "plugin" => ["description" => "", "name" => "Events"]
+    "plugin" => ["description" => "Gestion des événements", "name" => "Événements"]
 ];
