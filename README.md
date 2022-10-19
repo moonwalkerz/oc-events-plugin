@@ -17,6 +17,7 @@ MoonWalkerz present "Events"! A simple event plugin for October CMS. this plugin
 
 this plugin needs the following dependencies:
 - Rainlab.Translate
+- Inetis.ListSwitch
 
 ## 🚀 Install 🚀
 
