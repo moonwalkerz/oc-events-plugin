@@ -9,20 +9,30 @@ navigation:
         label: 'moonwalkerz.events::lang.menu.events'
         url: moonwalkerz/events/events
         icon: icon-ticket
+        permissions:
+            - 'moonwalkerz.events.access_events'
         sideMenu:
             side-event-item:
                 label: 'moonwalkerz.events::lang.menu.events'
                 url: moonwalkerz/events/events
                 icon: icon-ticket
+                permissions:
+                    - 'moonwalkerz.events.access_events'
             side-event-venue:
                 label: 'moonwalkerz.events::lang.menu.venues'
                 url: moonwalkerz/events/venues
                 icon: icon-home
+                permissions:
+                    - 'moonwalkerz.events.access_venues'
             side-event-category:
                 label: 'moonwalkerz.events::lang.menu.categories'
                 url: moonwalkerz/events/categories
                 icon: icon-list-alt
+                permissions:
+                    - 'moonwalkerz.events.access_categories'
             side-event-tag:
                 label: 'moonwalkerz.events::lang.menu.tags'
                 url: moonwalkerz/events/tags
                 icon: icon-tags
+                permissions:
+                    - 'moonwalkerz.events.access_tags'
