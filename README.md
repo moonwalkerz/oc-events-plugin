@@ -44,13 +44,13 @@ y = "{{ :y }}"
 m = "{{ :m }}"
 d = "{{ :d }}"
 ==
-<div class="w-full bg-arancio py-16 -my-16">
+<div class="w-full bg-orange py-16 -my-16">
 <div class="container mx-auto ">
 {% component 'eventPage' %}
 </div>
 </div>
 ```
-### Example of a page with a list of events\
+### Example of a page with a list of events
 The list of events has two possible types of pagination, the classic one with page numbering or the incremental one that adds new events by pressing loadmore
 url = "/events/:page?"
 layout = "default"
@@ -63,7 +63,7 @@ skip = 0
 paginate = 0
 timeline = 1
 sortOrder = "date_from asc"
-eventPage = "evento"
+eventPage = "event"
 categories = "{{ :categories }}"
 ==
 <div class="container mx-auto">
