@@ -27,5 +27,7 @@ columns:
         textFalse: 'moonwalkerz.events::lang.list.uncancel'
     actions:
         label: 'moonwalkerz.events::lang.list.actions'
+        searchable: false
+        sortable: false
         type: partial
         path: ~/plugins/moonwalkerz/events/models/event/_actions.htm
