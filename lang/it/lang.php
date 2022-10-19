@@ -46,6 +46,7 @@ return [
         "add" => "Aggiungi",
         "allday" => "Tutto il giorno?",
         "attachments" => "Allegati",
+        "canceled" => "Annullato",
         "choose" => "Scegli",
         "contact" => "Contatto",
         "contacts" => "Contatti",

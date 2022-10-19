@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<babeledit_project be_version="2.8.0" version="1.2">
+<babeledit_project be_version="3.0.1" version="1.2">
     <!--
 
     BabelEdit project file
@@ -837,6 +837,27 @@
                             </concept_node>
                             <concept_node>
                                 <name>attachments</name>
+                                <definition_loaded>false</definition_loaded>
+                                <description/>
+                                <comment/>
+                                <default_text/>
+                                <translations>
+                                    <translation>
+                                        <language>en-US</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>fr-FR</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>it-IT</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                </translations>
+                            </concept_node>
+                            <concept_node>
+                                <name>canceled</name>
                                 <definition_loaded>false</definition_loaded>
                                 <description/>
                                 <comment/>
@@ -1896,12 +1917,14 @@
     </translation_files>
     <editor_configuration>
         <save_empty_translations>true</save_empty_translations>
+        <translation_order>alphabetically</translation_order>
         <copy_templates>
             <copy_template>__('%1')</copy_template>
             <copy_template>{{ __('%1') }}</copy_template>
             <copy_template>@lang('%1')</copy_template>
             <copy_template>trans_choice('%1', n)</copy_template>
         </copy_templates>
+        <custom_languages/>
     </editor_configuration>
     <primary_language>it-IT</primary_language>
     <configuration>

@@ -46,6 +46,7 @@ return [
         "add" => "Add",
         "allday" => "All day?",
         "attachments" => "Attachments",
+        "canceled" => "Canceled",
         "choose" => "Choose",
         "contact" => "Contact",
         "contacts" => "Contacts",

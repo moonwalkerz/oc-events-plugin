@@ -46,6 +46,7 @@ return [
         "add" => "",
         "allday" => "",
         "attachments" => "",
+        "canceled" => "Annulé",
         "choose" => "",
         "contact" => "",
         "contacts" => "",
