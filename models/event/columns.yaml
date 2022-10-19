@@ -17,6 +17,14 @@ columns:
         titleFalse: 'moonwalkerz.events::lang.list.unpublished'
         textTrue: 'moonwalkerz.events::lang.list.publish'
         textFalse: 'moonwalkerz.events::lang.list.unpublish'
+    canceled:
+        label: 'moonwalkerz.events::lang.list.canceled'
+        type: inetis-list-switch
+        icon: true
+        titleTrue: 'moonwalkerz.events::lang.list.canceled'
+        titleFalse: 'moonwalkerz.events::lang.list.uncanceled'
+        textTrue: 'moonwalkerz.events::lang.list.cancel'
+        textFalse: 'moonwalkerz.events::lang.list.uncancel'
     actions:
         label: 'moonwalkerz.events::lang.list.actions'
         type: partial

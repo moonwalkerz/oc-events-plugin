@@ -111,3 +111,9 @@ tabs:
             span: auto
             type: switch
             tab: 'moonwalkerz.events::lang.form.publication_tab'
+        canceled:
+            label: 'moonwalkerz.events::lang.form.canceled'
+            span: auto
+            dependsOn: {  }
+            type: switch
+            tab: 'moonwalkerz.events::lang.form.publication_tab'
