@@ -28,7 +28,80 @@ composer require moonwalkerz/oc-events
 
 ## ⚙️ Documentation ⚙️
 
-Documentation is coming soon
+Using this plugin is really simple! Once installed just insert the component on the page and and enter the settings and filters you want.
+
+below some examples:
+
+### Example of an event page with url like /event/yyy/mm/dd/slug
+```
+url = "/evento/:y/:m/:d/:slug"
+layout = "default"
+title = "Evento"
+
+[eventPage]
+slug = "{{ :slug }}"
+y = "{{ :y }}"
+m = "{{ :m }}"
+d = "{{ :d }}"
+==
+<div class="w-full bg-arancio py-16 -my-16">
+<div class="container mx-auto ">
+{% component 'eventPage' %}
+</div>
+</div>
+```
+### Example of a page with a list of events\
+The list of events has two possible types of pagination, the classic one with page numbering or the incremental one that adds new events by pressing loadmore
+url = "/events/:page?"
+layout = "default"
+title = "Events"
+```
+[eventList]
+pageNumber = "{{ :page }}"
+eventsPerPage = 9
+skip = 0
+paginate = 0
+timeline = 1
+sortOrder = "date_from asc"
+eventPage = "evento"
+categories = "{{ :categories }}"
+==
+<div class="container mx-auto">
+{% component 'eventList' %}
+</div>
+```
+
+### Example of a page with a list of events filtered by tag
+```
+url = "/tag/:tags/:page?"
+layout = "default"
+title = "Events by Tag"
+
+[eventList]
+pageNumber = "{{ :page }}"
+eventsPerPage = 9
+skip = 0
+paginate = 0
+timeline = 1
+sortOrder = "date_from asc"
+eventPage = "event"
+categories = "{{ :categories }}"
+tags = "{{ :tags }}"
+==
+<section class=" relative pb-32">
+    <div class=" container mx-auto">
+        <div class="text-center pt-32 pb-24"> 
+            <h2 class="text-white uppercase font-light text-4xl pb-3">Events  tagged by {{ tags }} </h2>
+        </div>
+    {% component 'eventList' %}
+    </div>
+</section>
+```
+## 🙏 Big Thanks to 🙏
+- Leaflet | http://leafletjs.com
+- Rainlab | https://github.com/rainlab
+
+ 
 
 ## 🤑 Support Us 🤑
 
