@@ -1,5 +1,5 @@
 {
-    "name": "moonwalkerz/events-plugin",
+    "name": "moonwalkerz/oc-events",
     "type": "october-plugin",
     "description": "Events Manager for October CMS",
     "homepage": "https://github.com/moonwalkerz/oc-events",
@@ -7,8 +7,13 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Alain Martini",
-            "email": "webmaster@martini-multimedia.net",
+            "name": "Alain",
+            "email": "alain@moonwalkerz.dev",
+            "role": "Founder"
+        },
+	{
+            "name": "Nicolo",
+            "email": "webmaster@moonwalkerz.dev",
             "role": "Founder"
         }
     ],
