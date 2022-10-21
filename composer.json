@@ -20,7 +20,7 @@
     "require": {
         "php": ">=7.4",
         "composer/installers": "~1.0",
-	"rainlab/translate": ">=1.9"
+	"rainlab/translate-plugin": ">=1.9"
     },
     "minimum-stability": "dev"
 }
