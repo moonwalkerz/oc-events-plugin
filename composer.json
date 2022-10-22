@@ -1,5 +1,5 @@
 {
-    "name": "moonwalkerz/events",
+    "name": "moonwalkerz/events-plugin",
     "type": "october-plugin",
     "description": "Events Manager for October CMS",
     "homepage": "https://github.com/moonwalkerz/events-plugin",
