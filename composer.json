@@ -1,8 +1,8 @@
 {
-    "name": "moonwalkerz/oc-events-plugin",
+    "name": "moonwalkerz/events-plugin",
     "type": "october-plugin",
     "description": "Events Manager for October CMS",
-    "homepage": "https://github.com/moonwalkerz/oc-events-plugin",
+    "homepage": "https://github.com/moonwalkerz/events-plugin",
     "keywords": [
         "october",
         "octobercms", 
