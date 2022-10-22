@@ -3,16 +3,20 @@
     "type": "october-plugin",
     "description": "Events Manager for October CMS",
     "homepage": "https://github.com/moonwalkerz/oc-events",
-    "keywords": ["october", "octobercms", "translate"],
+    "keywords": [
+        "october",
+        "octobercms", 
+        "events", 
+        "plugin"],
     "license": "MIT",
     "authors": [
         {
-            "name": "Alain",
+            "name": "Alain Martini",
             "email": "alain@moonwalkerz.dev",
             "role": "Founder"
         },
 	{
-            "name": "Nicolo",
+            "name": "Nicolo Verginella",
             "email": "webmaster@moonwalkerz.dev",
             "role": "Founder"
         }
@@ -20,7 +24,11 @@
     "require": {
         "php": ">=7.4",
         "composer/installers": "~1.0",
-	"rainlab/translate-plugin": ">=1.9"
+        "rainlab/translate-plugin": "^1.9.0"
     },
-    "minimum-stability": "dev"
+    "config": {
+        "allow-plugins": {
+          "composer/installers": true
+        }
+      }
 }
