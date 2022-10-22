@@ -24,7 +24,12 @@ this plugin needs the following dependencies:
 You can install this plugin with this command:
 
 ```
-composer require moonwalkerz/oc-events
+composer require moonwalkerz/oc-events-plugin
+```
+Next:
+
+```
+php artisan october:migrate
 ```
 
 ## ⚙️ Documentation ⚙️
