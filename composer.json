@@ -31,5 +31,5 @@
           "composer/installers": true
         }
       },
-      "minimum-stability": "v1.0.14"
+      "minimum-stability": "stable"
 }
