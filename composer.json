@@ -30,5 +30,6 @@
         "allow-plugins": {
           "composer/installers": true
         }
-      }
+      },
+      "minimum-stability": "dev"
 }
