@@ -31,5 +31,5 @@
           "composer/installers": true
         }
       },
-      "minimum-stability": "dev"
+      "minimum-stability": "dev-main"
 }
