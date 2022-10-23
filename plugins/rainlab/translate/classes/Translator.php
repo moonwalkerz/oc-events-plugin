@@ -1,12 +1,11 @@
 <?php namespace RainLab\Translate\Classes;
 
 use App;
-use Event;
 use Config;
 use Schema;
 use Session;
 use Request;
-use RainLab\Translate\Classes\Locale;
+use RainLab\Translate\Models\Locale;
 
 /**
  * Translator class
@@ -43,17 +42,8 @@ class Translator
      */
     public function init()
     {
-        $this->defaultLocale = Locale::getDefaultSiteLocale();
-        $this->activeLocale = Locale::getSiteLocaleFromContext();
-
-        // Reset locale when active and edit sites change
-        Event::listen('system.site.setEditSite', function() {
-            $this->activeLocale = Locale::getSiteLocaleFromContext();
-        });
-
-        Event::listen('system.site.setActiveSite', function() {
-            $this->activeLocale = Locale::getSiteLocaleFromContext();
-        });
+        $this->defaultLocale = $this->isConfigured() ? array_get(Locale::getDefault(), 'code', 'en') : 'en';
+        $this->activeLocale = $this->defaultLocale;
     }
 
     /**
@@ -130,6 +120,53 @@ class Translator
     //
     // Request handling
     //
+
+    /**
+     * handleLocaleRoute will check if the route contains a translated locale prefix (/en/)
+     * and return that locale to be registered with the router.
+     * @return string
+     */
+    public function handleLocaleRoute()
+    {
+        if (Config::get('rainlab.translate::disableLocalePrefixRoutes', false)) {
+            return '';
+        }
+
+        if (App::runningInBackend()) {
+            return '';
+        }
+
+        if (!$this->isConfigured()) {
+            return '';
+        }
+
+        if (!$this->loadLocaleFromRequest()) {
+            return '';
+        }
+
+        $locale = $this->getLocale();
+        if (!$locale) {
+            return '';
+        }
+
+        return $locale;
+    }
+
+    /**
+     * Sets the locale based on the first URI segment.
+     * @return bool
+     */
+    public function loadLocaleFromRequest()
+    {
+        $locale = Request::segment(1);
+
+        if (!Locale::isValid($locale)) {
+            return false;
+        }
+
+        $this->setLocale($locale);
+        return true;
+    }
 
     /**
      * Returns the current path prefixed with language code.

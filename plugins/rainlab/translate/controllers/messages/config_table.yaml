@@ -11,6 +11,7 @@ searching: true
 columns:
     from:
         title: From
-        readOnly: true
     to:
         title: To
+    found:
+        title: Scan errors

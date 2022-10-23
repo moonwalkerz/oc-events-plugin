@@ -6,5 +6,4 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Less' => array($vendorDir . '/wikimedia/less.php/lib'),
 );

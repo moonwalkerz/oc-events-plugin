@@ -4,7 +4,7 @@ use App;
 use RainLab\Translate\Classes\TranslatableBehavior;
 
 /**
- * TranslatablePage model extension
+ * Translatable page model extension
  *
  * Usage:
  *
@@ -17,9 +17,6 @@ use RainLab\Translate\Classes\TranslatableBehavior;
  */
 class TranslatablePage extends TranslatableBehavior
 {
-    /**
-     * __construct
-     */
     public function __construct($model)
     {
         parent::__construct($model);
@@ -33,9 +30,6 @@ class TranslatablePage extends TranslatableBehavior
         });
     }
 
-    /**
-     * isTranslatable
-     */
     public function isTranslatable($key)
     {
         if ($key === 'translatable' || $this->translatableDefault == $this->translatableContext) {
@@ -45,9 +39,6 @@ class TranslatablePage extends TranslatableBehavior
         return in_array($key, $this->model->translatable);
     }
 
-    /**
-     * getTranslatableAttributes
-     */
     public function getTranslatableAttributes()
     {
         $attributes = [];
@@ -59,9 +50,6 @@ class TranslatablePage extends TranslatableBehavior
         return $attributes;
     }
 
-    /**
-     * getModelAttributes
-     */
     public function getModelAttributes()
     {
         $attributes = [];
@@ -73,18 +61,12 @@ class TranslatablePage extends TranslatableBehavior
         return $attributes;
     }
 
-    /**
-     * initTranslatableContext
-     */
     public function initTranslatableContext()
     {
         parent::initTranslatableContext();
         $this->translatableOriginals = $this->getModelAttributes();
     }
 
-    /**
-     * rewriteTranslatablePageAttributes
-     */
     public function rewriteTranslatablePageAttributes($locale = null)
     {
         $locale = $locale ?: $this->translatableContext;
@@ -101,9 +83,6 @@ class TranslatablePage extends TranslatableBehavior
         }
     }
 
-    /**
-     * getAttributeTranslated
-     */
     public function getAttributeTranslated($key, $locale = null)
     {
         $locale = $locale ?: $this->translatableContext;
@@ -121,9 +100,6 @@ class TranslatablePage extends TranslatableBehavior
         return array_get($this->model->attributes, $localeAttr, $default);
     }
 
-    /**
-     * setAttributeTranslated
-     */
     public function setAttributeTranslated($key, $value, $locale = null)
     {
         $locale = $locale ?: $this->translatableContext;
@@ -132,8 +108,8 @@ class TranslatablePage extends TranslatableBehavior
             return;
         }
 
-        // Retrieve attr name within brackets (i.e. settings[title] yields title)
         if (strpbrk($key, '[]') !== false) {
+            // Retrieve attr name within brackets (i.e. settings[title] yields title)
             $key = preg_split("/[\[\]]/", $key)[1];
         }
 
@@ -147,9 +123,6 @@ class TranslatablePage extends TranslatableBehavior
         });
     }
 
-    /**
-     * saveTranslation
-     */
     public function saveTranslation($key, $value, $locale)
     {
         $localeAttr = sprintf('viewBag.locale%s.%s', ucfirst($key), $locale);
@@ -161,13 +134,7 @@ class TranslatablePage extends TranslatableBehavior
         }
     }
 
-    /**
-     * storeTranslatableData satifies the interface
-     */
+    // Not needed but parent abstract model requires those
     protected function storeTranslatableData($locale = null) {}
-
-    /**
-     * loadTranslatableData satifies the interface
-     */
     protected function loadTranslatableData($locale = null) {}
 }

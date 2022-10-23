@@ -11,34 +11,34 @@ use October\Rain\Extension\ExtensionBase;
  *
  * In the model class definition:
  *
- *   public $implement = ['@'.\RainLab\Translate\Behaviors\TranslatablePageUrl::class];
+ *   public $implement = ['@RainLab.Translate.Behaviors.TranslatablePageUrl'];
  *
  */
 class TranslatablePageUrl extends ExtensionBase
 {
     /**
-     * @var \October\Rain\Database\Model model reference
+     * @var \October\Rain\Database\Model Reference to the extended model.
      */
     protected $model;
 
     /**
-     * @var string translatableContext active language for translations.
+     * @var string Active language for translations.
      */
     protected $translatableContext;
 
     /**
-     * @var string translatableDefault system language.
+     * @var string Default system language.
      */
     protected $translatableDefault;
 
     /**
-     * @var string translatableDefaultUrl original page url
+     * @var string Default page URL.
      */
     protected $translatableDefaultUrl;
 
     /**
-     * __construct using the extended model.
-     * @param \October\Rain\Database\Model $model
+     * Constructor
+     * @param \October\Rain\Database\Model $model The extended model.
      */
     public function __construct($model)
     {
@@ -55,8 +55,28 @@ class TranslatablePageUrl extends ExtensionBase
         });
     }
 
+    protected function setModelUrl($value)
+    {
+        if ($this->model instanceof \RainLab\Pages\Classes\Page) {
+            array_set($this->model->attributes, 'viewBag.url', $value);
+        }
+        else {
+            $this->model->url = $value;
+        }
+    }
+
+    protected function getModelUrl()
+    {
+        if ($this->model instanceof \RainLab\Pages\Classes\Page) {
+            return array_get($this->model->attributes, 'viewBag.url');
+        }
+        else {
+            return $this->model->url;
+        }
+    }
+
     /**
-     * initTranslatableContext, sets the default language code to use.
+     * Initializes this class, sets the default language code to use.
      * @return void
      */
     public function initTranslatableContext()
@@ -67,8 +87,8 @@ class TranslatablePageUrl extends ExtensionBase
     }
 
     /**
-     * rewriteTranslatablePageUrl checks if a translated URL exists and rewrites it,
-     * this method should only be called from the context of front-end.
+     * Checks if a translated URL exists and rewrites it, this method
+     * should only be called from the context of front-end.
      * @return void
      */
     public function rewriteTranslatablePageUrl($locale = null)
@@ -76,7 +96,7 @@ class TranslatablePageUrl extends ExtensionBase
         $locale = $locale ?: $this->translatableContext;
         $localeUrl = $this->translatableDefaultUrl;
 
-        if ($locale !== $this->translatableDefault) {
+        if ($locale != $this->translatableDefault) {
             $localeUrl = $this->getSettingsUrlAttributeTranslated($locale) ?: $localeUrl;
         }
 
@@ -84,7 +104,7 @@ class TranslatablePageUrl extends ExtensionBase
     }
 
     /**
-     * hasTranslatablePageUrl determines if a locale has a translated URL.
+     * Determines if a locale has a translated URL.
      * @return bool
      */
     public function hasTranslatablePageUrl($locale = null)
@@ -95,24 +115,14 @@ class TranslatablePageUrl extends ExtensionBase
     }
 
     /**
-     * getSettingsUrlAttributeTranslated
+     * Mutator detected by MLControl
      * @return string
      */
     public function getSettingsUrlAttributeTranslated($locale)
     {
-        $defaults = $locale === $this->translatableDefault
-            ? $this->translatableDefaultUrl
-            : null;
+        $defaults = ($locale == $this->translatableDefault) ? $this->translatableDefaultUrl : null;
 
         return array_get($this->model->attributes, 'viewBag.localeUrl.'.$locale, $defaults);
-    }
-
-    /**
-     * getOriginalUrlAttributeTranslated
-     */
-    public function getOriginalUrlAttributeTranslated()
-    {
-        return $this->translatableDefaultUrl;
     }
 
     /**
@@ -159,31 +169,5 @@ class TranslatablePageUrl extends ExtensionBase
     public function setViewBagUrlAttributeTranslated($value, $locale)
     {
         $this->setSettingsUrlAttributeTranslated($value, $locale);
-    }
-
-    /**
-     * setModelUrl
-     */
-    protected function setModelUrl($value)
-    {
-        if ($this->model instanceof \RainLab\Pages\Classes\Page) {
-            array_set($this->model->attributes, 'viewBag.url', $value);
-        }
-        else {
-            $this->model->url = $value;
-        }
-    }
-
-    /**
-     * getModelUrl
-     */
-    protected function getModelUrl()
-    {
-        if ($this->model instanceof \RainLab\Pages\Classes\Page) {
-            return array_get($this->model->attributes, 'viewBag.url');
-        }
-        else {
-            return $this->model->url;
-        }
     }
 }

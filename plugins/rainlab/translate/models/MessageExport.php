@@ -1,39 +1,19 @@
 <?php namespace RainLab\Translate\Models;
 
 use Backend\Models\ExportModel;
-use RainLab\Translate\Classes\Locale;
-use ValidationException;
 
 class MessageExport extends ExportModel
 {
-    use \October\Rain\Database\Traits\Validation;
+    const CODE_COLUMN_NAME = 'code';
+    const DEFAULT_COLUMN_NAME = 'default';
 
     /**
-     * @var array guarded fields
-     */
-    protected $guarded = [];
-
-    /**
-     * @var array fillable fields
-     */
-    protected $fillable = [
-        'locale'
-    ];
-
-    /**
-     * @var array rules to be applied to the data.
-     */
-    public $rules = [
-        'locale' => 'required'
-    ];
-
-    /**
-     * Exports the message data for a given locale.
+     * Exports the message data with each locale in a separate column.
      *
-     * key    | message
-     * -----------------
-     * Title  | Titel
-     * Name   | Prénom
+     * code      | default   | en    | de    | fr
+     * ----------------------------------------------
+     * title     | Title     | Title | Titel | Titre
+     * name      | Name      | Name  | Name  | Prénom
      * ...
      *
      * @param $columns
@@ -42,43 +22,31 @@ class MessageExport extends ExportModel
      */
     public function exportData($columns, $sessionKey = null)
     {
-        if (!$this->locale) {
-            throw new ValidationException(['locale' => 'Please select a locale to export']);
-        }
+        return Message::all()->map(function ($message) use ($columns) {
+            $data = $message->message_data;
+            // Add code to data to simplify algorithm
+            $data[self::CODE_COLUMN_NAME] = $message->code;
 
-        $messages = Message::getMessages($this->locale);
-
-        // Raw JSON
-        if ($this->file_format === 'json') {
-            return $messages;
-        }
-
-        $result = [];
-        foreach ($messages as $key => $message){
-            $result[] = compact('key', 'message');
-        }
-
-        return $result;
+            $result = [];
+            foreach ($columns as $column) {
+                $result[$column] = isset($data[$column]) ? $data[$column] : '';
+            }
+            return $result;
+        })->toArray();
     }
 
     /**
-     * getLocaleOptions returns available options for the "locale" attribute.
+     * getColumns
+     *
+     * code, default column + all existing locales
+     *
      * @return array
      */
-    public function getLocaleOptions()
+    public static function getColumns()
     {
-        $options = [];
-
-        foreach (Locale::listLocales() as $locale) {
-            $options[$locale->code] = "{$locale->name} [$locale->code]";
-        }
-
-        // Make the active locale first and therefore default
-        $locale = Locale::getSiteLocaleFromContext();
-        if ($active = array_pull($options, $locale)) {
-            $options = [$locale => $active] + $options;
-        }
-
-        return $options;
+        return array_merge([
+            self::CODE_COLUMN_NAME => self::CODE_COLUMN_NAME,
+            Message::DEFAULT_LOCALE => self::DEFAULT_COLUMN_NAME,
+        ], Locale::lists(self::CODE_COLUMN_NAME, self::CODE_COLUMN_NAME));
     }
 }

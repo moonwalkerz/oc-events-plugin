@@ -1,29 +1,18 @@
 {
     "name": "moonwalkerz/events-plugin",
-    "type": "october-plugin",
     "description": "Events Manager for October CMS",
-    "homepage": "https://github.com/moonwalkerz/events-plugin",
-    "keywords": [
-        "october",
-        "octobercms", 
-        "events", 
-        "plugin"],
+    "type": "october-plugin",
+    "require": {
+        "rainlab/translate-plugin": "^1.9.0",
+        "composer/installers": "~1.0",
+        "php": ">=7.4"
+    },
     "license": "MIT",
     "authors": [
         {
             "name": "Alain Martini",
-            "email": "alain@moonwalkerz.dev",
-            "role": "Founder"
-        },
-	{
-            "name": "Nicolo Verginella",
-            "email": "webmaster@moonwalkerz.dev",
-            "role": "Founder"
+            "email": "alain@moonwalkerz.dev"
         }
     ],
-    "require": {
-        "php": ">=8.0",
-        "composer/installers": "~1.0"
-    },
     "minimum-stability": "dev"
 }

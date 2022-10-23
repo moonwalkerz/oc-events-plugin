@@ -23,13 +23,15 @@ class TranslatableModel extends TranslatableBehavior
         parent::__construct($model);
 
         $model->morphMany['translations'] = [
-            \RainLab\Translate\Models\Attribute::class,
+            'RainLab\Translate\Models\Attribute',
             'name' => 'model'
         ];
 
-        // Replace attachments with translatable  ones
-        $this->extendFileModels('attachOne');
-        $this->extendFileModels('attachMany');
+        // October v2.0
+        if (class_exists('System')) {
+            $this->extendFileModels('attachOne');
+            $this->extendFileModels('attachMany');
+        }
 
         // Clean up indexes when this model is deleted
         $model->bindEvent('model.afterDelete', function() use ($model) {
@@ -91,7 +93,7 @@ class TranslatableModel extends TranslatableBehavior
         if(($locale ?: $this->translatableContext) === $this->translatableDefault) {
             return $query->where($index, $operator, $value);
         }
-
+        
         return $this->transWhereInternal($query, $index, $value, [
             'locale' => $locale,
             'operator' => $operator,
