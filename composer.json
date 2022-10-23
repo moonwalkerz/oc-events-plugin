@@ -5,13 +5,10 @@
     "require": {
         "composer/installers": "~1.0",
         "php": ">=7.4",
-        "rainlab/translate-plugin": "1.9.*"
+        "rainlab/location-plugin": "^1.1.5",
+        "rainlab/translate-plugin": "dev-master"
     },
-    "require-dev": {
-        "composer/installers": "~1.0",
-        "php": ">=7.4",
-        "rainlab/translate-plugin": "1.9.*"
-    },
+    
     "license": "MIT",
     "authors": [
         {
