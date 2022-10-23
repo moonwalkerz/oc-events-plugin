@@ -1,0 +1,13 @@
+# Composer files
+/vendor
+composer.phar
+composer.lock
+
+# Editor files
+.idea
+.vscode
+
+# Other files
+.DS_Store
+php_errors.log
+.phpunit.result.cache

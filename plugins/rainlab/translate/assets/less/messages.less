@@ -1,0 +1,63 @@
+#messagesContainer {
+    padding-top: 20px;
+}
+
+.translate-messages {
+    position: relative;
+
+    .dropdown-button-placeholder {
+        display:block;
+        width: 1px;
+        height: 20px
+    }
+
+    .dropdown-to, .dropdown-from {
+        position: absolute;
+        top: 57px;
+    }
+
+    .dropdown-to {
+        left: 50%;
+    }
+
+    .dropdown-from {
+        left: 0;
+    }
+
+    .no-other-languages {
+        text-align: center;
+        padding: 5px;
+    }
+
+    .header-language,
+    .header-hide-translated {
+        line-height: 27px;
+    }
+
+    .header-language {
+        float: left;
+        cursor: pointer;
+
+        span.is-default {
+            text-transform: none;
+        }
+    }
+
+    .header-hide-translated {
+        float: right;
+        text-align: right;
+
+        label {
+            font-weight: normal;
+            margin-bottom: 0;
+            margin-right: 10px;
+            font-size: 12px;
+            white-space: normal;
+
+            &:before {
+                top: 5px;
+                left: 0;
+            }
+        }
+    }
+}

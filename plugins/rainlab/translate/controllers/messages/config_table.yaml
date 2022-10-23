@@ -1,0 +1,16 @@
+# ===================================
+#  Grid Widget Configuration
+# ===================================
+
+dataSource: server
+keyFrom: id
+recordsPerPage: 500
+adding: false
+searching: true
+
+columns:
+    from:
+        title: From
+        readOnly: true
+    to:
+        title: To
