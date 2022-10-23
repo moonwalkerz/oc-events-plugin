@@ -5,8 +5,6 @@
     "require": {
         "composer/installers": "~1.0",
         "php": ">=7.4",
-        "rainlab/location-plugin": "^1.1.5",
-        "rainlab/translate-plugin": "dev-master"
     },
     
     "license": "MIT",
