@@ -7,6 +7,11 @@
         "php": ">=7.4",
         "rainlab/translate-plugin": "1.9.*"
     },
+    "require-dev": {
+        "composer/installers": "~1.0",
+        "php": ">=7.4",
+        "rainlab/translate-plugin": "1.9.*"
+    },
     "license": "MIT",
     "authors": [
         {
