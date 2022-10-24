@@ -1,9 +1,9 @@
-<?php namespace Moonwalkerz\Events\Updates;
+<?php namespace MoonWalkerz\Events\Updates;
 
 use Schema;
 use October\Rain\Database\Updates\Migration;
 
-class BuilderTableUpdateMoonwalkerzEventsEvents2 extends Migration
+class BuilderTableUpdateMoonWalkerzEventsEvents2 extends Migration
 {
     public function up()
     {

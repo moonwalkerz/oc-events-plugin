@@ -1,5 +1,5 @@
 list: $/moonwalkerz/events/models/tag/columns.yaml
-modelClass: Moonwalkerz\Events\Models\Tag
+modelClass: MoonWalkerz\Events\Models\Tag
 title: Tags
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true

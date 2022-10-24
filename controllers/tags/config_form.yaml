@@ -1,6 +1,6 @@
 name: Tags
 form: $/moonwalkerz/events/models/tag/fields.yaml
-modelClass: Moonwalkerz\Events\Models\Tag
+modelClass: MoonWalkerz\Events\Models\Tag
 defaultRedirect: moonwalkerz/events/tags
 create:
     redirect: 'moonwalkerz/events/tags/update/:id'

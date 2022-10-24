@@ -1,12 +1,12 @@
 <?php
 
-namespace Moonwalkerz\Events\Components;
+namespace MoonWalkerz\Events\Components;
 
 use Redirect;
 use BackendAuth;
 use Cms\Classes\Page;
 use Cms\Classes\ComponentBase;
-use Moonwalkerz\Events\Models\Event as E;
+use MoonWalkerz\Events\Models\Event as E;
 use Input;
 use Log;
 

@@ -1,5 +1,5 @@
 list: $/moonwalkerz/events/models/venue/columns.yaml
-modelClass: Moonwalkerz\Events\Models\Venue
+modelClass: MoonWalkerz\Events\Models\Venue
 title: Venues
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true

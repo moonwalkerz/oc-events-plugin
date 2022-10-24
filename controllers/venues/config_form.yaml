@@ -1,6 +1,6 @@
 name: Venues
 form: $/moonwalkerz/events/models/venue/fields.yaml
-modelClass: Moonwalkerz\Events\Models\Venue
+modelClass: MoonWalkerz\Events\Models\Venue
 defaultRedirect: moonwalkerz/events/venues
 create:
     redirect: 'moonwalkerz/events/venues/update/:id'

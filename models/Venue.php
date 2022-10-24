@@ -1,4 +1,4 @@
-<?php namespace Moonwalkerz\Events\Models;
+<?php namespace MoonWalkerz\Events\Models;
 
 use Model;
 

@@ -1,5 +1,5 @@
 title: Categories
 nameFrom: title
-modelClass: Moonwalkerz\Events\Models\Category
+modelClass: MoonWalkerz\Events\Models\Category
 toolbar:
     buttons: reorder_toolbar

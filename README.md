@@ -2,7 +2,7 @@
 
 # Events | October CMS
 
-Moonwalkerz present "Events"! A simple event plugin for October CMS. this plugin allows you to create and publish events on your website. What more do you want?
+MoonWalkerz present "Events"! A simple event plugin for October CMS. this plugin allows you to create and publish events on your website. What more do you want?
 
 ## 🔥 Features 🔥
 
@@ -123,4 +123,4 @@ Do you have any suggestions?\
 Do you need to customise this plugin?
 
 Mail: webmaster@moonwalkerz.dev\
-Telegram: @MoonwalkerzDev
+Telegram: @MoonWalkerzDev

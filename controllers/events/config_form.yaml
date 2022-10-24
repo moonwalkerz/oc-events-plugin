@@ -1,5 +1,5 @@
 name: Events
-modelClass: Moonwalkerz\Events\Models\Event
+modelClass: MoonWalkerz\Events\Models\Event
 form: $/moonwalkerz/events/models/event/fields.yaml
 defaultRedirect: moonwalkerz/events/events
 create:

@@ -1,6 +1,6 @@
 name: Categories
 form: $/moonwalkerz/events/models/category/fields.yaml
-modelClass: Moonwalkerz\Events\Models\Category
+modelClass: MoonWalkerz\Events\Models\Category
 defaultRedirect: moonwalkerz/events/categories
 create:
     redirect: 'moonwalkerz/events/categories/update/:id'

@@ -1,6 +1,6 @@
 <?php
 
-namespace Moonwalkerz\Events\Models;
+namespace MoonWalkerz\Events\Models;
 
 use Model;
 
@@ -35,7 +35,7 @@ class Event extends Model
         'name' => 'required',
     ];
     public $belongsTo = [
-        'venue' => 'Moonwalkerz\Events\Models\Venue'
+        'venue' => 'MoonWalkerz\Events\Models\Venue'
     ];
 
     public $belongsToMany = [

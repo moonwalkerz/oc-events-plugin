@@ -1,7 +1,7 @@
 plugin:
     name: 'moonwalkerz.events::lang.plugin.name'
     description: 'moonwalkerz.events::lang.plugin.description'
-    author: 'Martini Multimedia'
+    author: 'MoonWalkerz'
     icon: oc-icon-ticket
     homepage: ''
 navigation:
