@@ -5,7 +5,11 @@
     "require": {
         "composer/installers": "~1.0",
         "php": ">=7.4",
+<<<<<<< HEAD
 	"rainlab/translate-plugin": ">=1.9"
+=======
+        "rainlab/translate-plugin": ">=1.9"
+>>>>>>> afd8b1fe48426759c938a957f038f627bbc2bade
     },
     "keywords": [
       "october",
@@ -13,7 +17,11 @@
     "events",
     "venues",
     "plugin"
+<<<<<<< HEAD
     ],    
+=======
+    ],
+>>>>>>> afd8b1fe48426759c938a957f038f627bbc2bade
     "license": "MIT",
     "authors": [
         {
@@ -25,5 +33,5 @@
     "allow-plugins": {
       "composer/installers": true
     }
-  }  
+  }
 }
