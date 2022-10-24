@@ -36,8 +36,8 @@ return [
             "m" => "Mese",
             "m_description" => "Parametro url del mese",
             "name" => "Evento",
-            "slug" => "",
-            "slug_description" => "",
+            "slug" => "url alias",
+            "slug_description" => "Testo di riferimento nella barra degli indirizzi",
             "y" => "Anno",
             "y_description" => "Parametro url dell'anno"
         ]
@@ -82,6 +82,7 @@ return [
     ],
     "list" => [
         "actions" => "Azioni",
+        "canceled" => "Annullato",
         "date" => "Data",
         "name" => "Nome",
         "publish" => "Pubblica",
