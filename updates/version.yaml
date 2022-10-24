@@ -24,3 +24,5 @@
 1.0.12:
     - 'Updated table moonwalkerz_events_events'
     - builder_table_update_moonwalkerz_events_events_2.php
+1.0.13:
+    - 'First public release'
