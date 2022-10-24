@@ -30,3 +30,5 @@
     - 'First fix on public release'
 1.0.15:
     - 'Dependency fixes'
+1.0.16:
+    - 'French locale added'
