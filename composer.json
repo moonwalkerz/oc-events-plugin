@@ -5,7 +5,8 @@
     "require": {
         "composer/installers": "~1.0",
         "php": ">=7.4",
-        "rainlab/translate-plugin": ">=1.9"
+        "rainlab/translate-plugin": ">=1.9",
+        "inetis/listswitch-plugin": ">=1.0"
     },
     "keywords": [
       "october",
