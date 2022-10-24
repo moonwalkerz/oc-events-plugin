@@ -1,4 +1,4 @@
-<?php namespace MoonWalkerz\Events\Controllers;
+<?php namespace Moonwalkerz\Events\Controllers;
 
 use Backend\Classes\Controller;
 use BackendMenu;
@@ -17,6 +17,6 @@ class Tags extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('MoonWalkerz.Events', 'events-item', 'side-event-tag');
+        BackendMenu::setContext('Moonwalkerz.Events', 'events-item', 'side-event-tag');
     }
 }

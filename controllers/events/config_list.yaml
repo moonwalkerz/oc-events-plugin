@@ -1,5 +1,5 @@
 title: Events
-modelClass: MoonWalkerz\Events\Models\Event
+modelClass: Moonwalkerz\Events\Models\Event
 list: $/moonwalkerz/events/models/event/columns.yaml
 recordUrl: 'moonwalkerz/events/events/update/:id'
 noRecordsMessage: 'backend::lang.list.no_records'

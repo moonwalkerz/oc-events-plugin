@@ -1,9 +1,9 @@
-<?php namespace MoonWalkerz\Events\Controllers;
+<?php namespace Moonwalkerz\Events\Controllers;
 
 use Backend\Classes\Controller;
 use BackendMenu;
 use Flash;
-use MoonWalkerz\Events\Models\Event;
+use Moonwalkerz\Events\Models\Event;
 class Events extends Controller
 {
     public $implement = [
@@ -21,7 +21,7 @@ class Events extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('MoonWalkerz.Events', 'events-item', 'side-event-item');
+        BackendMenu::setContext('Moonwalkerz.Events', 'events-item', 'side-event-item');
     }
 
     public function clone($id)

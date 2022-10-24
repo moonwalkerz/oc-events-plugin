@@ -1,9 +1,9 @@
-<?php namespace MoonWalkerz\Events\Components;
+<?php namespace Moonwalkerz\Events\Components;
 
 use Redirect;
 use BackendAuth;
 use Cms\Classes\ComponentBase;
-use MoonWalkerz\Events\Models\Event as E;
+use Moonwalkerz\Events\Models\Event as E;
 
 /**
  * Event Component

@@ -1,4 +1,4 @@
-<?php namespace MoonWalkerz\Events;
+<?php namespace Moonwalkerz\Events;
 
 use System\Classes\PluginBase;
 
@@ -7,8 +7,8 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            'MoonWalkerz\Events\Components\EventList' => 'eventList',
-            'MoonWalkerz\Events\Components\EventPage' => 'eventPage'
+            'Moonwalkerz\Events\Components\EventList' => 'eventList',
+            'Moonwalkerz\Events\Components\EventPage' => 'eventPage'
     ];
     }
 

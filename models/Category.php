@@ -1,4 +1,4 @@
-<?php namespace MoonWalkerz\Events\Models;
+<?php namespace Moonwalkerz\Events\Models;
 
 use Model;
 
@@ -23,7 +23,7 @@ class Category extends Model
     ];
 
     public $belongsToMany = [
-        'events' => ['MoonWalkerz\Events\Models\Event',
+        'events' => ['Moonwalkerz\Events\Models\Event',
             'table' => 'moonwalkerz_events_categories_events',
             'key'      => 'event_id',
             'otherKey' => 'category_id',

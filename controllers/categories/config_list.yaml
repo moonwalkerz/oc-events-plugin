@@ -1,5 +1,5 @@
 list: $/moonwalkerz/events/models/category/columns.yaml
-modelClass: MoonWalkerz\Events\Models\Category
+modelClass: Moonwalkerz\Events\Models\Category
 title: Categories
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true

@@ -1,4 +1,4 @@
-<?php namespace MoonWalkerz\Events\Updates;
+<?php namespace Moonwalkerz\Events\Updates;
 
 use Schema;
 use October\Rain\Database\Updates\Migration;
