@@ -23,6 +23,7 @@ return [
             "skip" => "Skip",
             "skip_description" => "Skip the first n events",
             "skip_validation" => "A number greater than or equal to zero is required",
+            "tags" => "Tags",
             "timeline" => "Event timeline",
             "timeline_all" => "All events",
             "timeline_description" => "Choose which events to display, all, future only, past only.\n",

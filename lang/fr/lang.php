@@ -23,6 +23,7 @@ return [
             "skip" => "Skip",
             "skip_description" => "Sauter les n premiers événements",
             "skip_validation" => "Un nombre supérieur ou égal à zéro est requis.",
+            "tags" => "Étiquettes",
             "timeline" => "Séquence d'événements",
             "timeline_all" => "Tous les évènements",
             "timeline_description" => "Choisissez les événements à afficher, tous, futurs uniquement, passés uniquement.",
@@ -92,7 +93,12 @@ return [
         "unpublish" => "Spubblica",
         "unpublished" => "Non publié"
     ],
-    "menu" => ["categories" => "", "events" => "", "tags" => "", "venues" => ""],
+    "menu" => [
+        "categories" => "catégories",
+        "events" => "Événements",
+        "tags" => "Étiquettes",
+        "venues" => "Places"
+    ],
     "permissions" => [
         "access_categories" => "Accès aux catégories",
         "access_events" => "Accès aux événements ",

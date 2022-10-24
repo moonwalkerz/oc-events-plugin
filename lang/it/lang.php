@@ -23,6 +23,7 @@ return [
             "skip" => "Salta",
             "skip_description" => "Salta i primi n eventi",
             "skip_validation" => "E' necessario un numero maggiore o uguale a zero",
+            "tags" => "Etichette",
             "timeline" => "Sequenza Eventi",
             "timeline_all" => "Tutti gli eventi",
             "timeline_description" => "Scegli quali eventi visualizzare, tutti, soli i futuri, solo i passati.",
