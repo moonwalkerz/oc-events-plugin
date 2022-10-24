@@ -14,5 +14,5 @@
             "email": "alain@moonwalkerz.dev"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
