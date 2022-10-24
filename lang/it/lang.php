@@ -4,6 +4,8 @@ return [
         "list" => [
             "categories" => "Categorie",
             "categories_description" => "Filtro categorie",
+            "categories_page" => "Pagina categorie",
+            "categories_page_description" => "Scegli la pagina di filtro per categoria",
             "description" => "Mostra una lista di eventi",
             "event_page" => "Pagina evento",
             "event_page_description" => "Seleziona la pagina dell'evento",
@@ -24,6 +26,8 @@ return [
             "skip_description" => "Salta i primi n eventi",
             "skip_validation" => "E' necessario un numero maggiore o uguale a zero",
             "tags" => "Etichette",
+            "tags_page" => "Pagina etichette",
+            "tags_page_description" => "Scegli la pagina di filtro per etichetta",
             "timeline" => "Sequenza Eventi",
             "timeline_all" => "Tutti gli eventi",
             "timeline_description" => "Scegli quali eventi visualizzare, tutti, soli i futuri, solo i passati.",

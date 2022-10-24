@@ -4,6 +4,8 @@ return [
         "list" => [
             "categories" => "Categories",
             "categories_description" => "Categories filter",
+            "categories_page" => "Page categories",
+            "categories_page_description" => "Choose filter page by category",
             "description" => "Show a list of events",
             "event_page" => "Event Page",
             "event_page_description" => "Select the event page",
@@ -24,6 +26,8 @@ return [
             "skip_description" => "Skip the first n events",
             "skip_validation" => "A number greater than or equal to zero is required",
             "tags" => "Tags",
+            "tags_page" => "Labels page",
+            "tags_page_description" => "Choose filter page by label",
             "timeline" => "Event timeline",
             "timeline_all" => "All events",
             "timeline_description" => "Choose which events to display, all, future only, past only.\n",
