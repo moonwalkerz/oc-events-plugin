@@ -14,5 +14,9 @@
             "email": "alain@moonwalkerz.dev"
         }
     ],
-    "minimum-stability": "stable"
+    "config": {
+    "allow-plugins": {
+      "composer/installers": true
+    }
+  }  
 }
