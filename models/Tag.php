@@ -70,7 +70,7 @@ class Tag extends Model
     public function setUrl($pageName, $controller)
     {
 
-        ray($controller);
+        
         $params['tags'] = $this->slug;
 
         

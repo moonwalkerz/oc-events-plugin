@@ -292,10 +292,10 @@ class EventList extends ComponentBase
          * Add a "url" helper attribute for linking to each post and lifestyle
          */
         $events->each(function ($event) {
-            ray($event);
+        
             $event->setUrl($this->eventPage, $this->controller);
             $event->tags->each(function ($tag) {
-                ray($tag);
+        
                 $tag->setUrl($this->tagsPage, $this->controller);
             });
         });
