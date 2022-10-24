@@ -24,7 +24,7 @@ this plugin needs the following dependencies:
 You can install this plugin with this command:
 
 ```
-composer require moonwalkerz/events-plugin
+composer require moonwalkerz/oc-events-plugin
 ```
 Next:
 
