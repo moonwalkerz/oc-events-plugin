@@ -1,4 +1,9 @@
-
+{% if events|length %}
 {% for event in events %}
 {% partial __SELF__ ~ '::item'  event = event%}
 {% endfor %}
+{% else %}
+<div class="no-events">
+    <p> {{ 'moonwalkerz.events::lang.components.list.no_events' | trans }} </p>
+</div>
+{% endif %}

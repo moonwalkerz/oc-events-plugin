@@ -4,8 +4,6 @@ return [
         "list" => [
             "categories" => "catégories",
             "categories_description" => "Filtrer les catégories",
-            "categories_page" => "Page des catégories",
-            "categories_page_description" => "Choisissez la page de filtrage par catégorie",
             "description" => "Afficher une liste d'événements",
             "event_page" => "Page de l'événement",
             "event_page_description" => "Sélectionnez la page de l'événement",
@@ -25,9 +23,6 @@ return [
             "skip" => "Skip",
             "skip_description" => "Sauter les n premiers événements",
             "skip_validation" => "Un nombre supérieur ou égal à zéro est requis.",
-            "tags" => "Étiquettes",
-            "tags_page" => "Page d'étiquettes",
-            "tags_page_description" => "Choisir la page de filtrage par étiquette",
             "timeline" => "Séquence d'événements",
             "timeline_all" => "Tous les évènements",
             "timeline_description" => "Choisissez les événements à afficher, tous, futurs uniquement, passés uniquement.",
@@ -97,12 +92,7 @@ return [
         "unpublish" => "Spubblica",
         "unpublished" => "Non publié"
     ],
-    "menu" => [
-        "categories" => "catégories",
-        "events" => "Événements",
-        "tags" => "Étiquettes",
-        "venues" => "Places"
-    ],
+    "menu" => ["categories" => "", "events" => "", "tags" => "", "venues" => ""],
     "permissions" => [
         "access_categories" => "Accès aux catégories",
         "access_events" => "Accès aux événements ",
