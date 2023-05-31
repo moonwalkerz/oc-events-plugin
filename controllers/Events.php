@@ -1,5 +1,6 @@
 <?php namespace MoonWalkerz\Events\Controllers;
 
+use Backend;
 use Backend\Classes\Controller;
 use BackendMenu;
 use Flash;
@@ -51,8 +52,8 @@ class Events extends Controller
         $this->cloneBelongsToMany($clone, $original, ['categories','tags']);
 
         Flash::success('Event cloned');
-
-        return \Redirect::back();
+        
+        return Backend::redirect('/moonwalkerz/events/events/update/'.$clone->id);
     }
 
     private function cloneBelongsToMany(Event $clone, Event $original,$relations)

@@ -2,25 +2,26 @@
 {% set venue = __SELF__.event.venue %}
 
 {% put meta %}
-<meta property="og:url"                content="{{''|page}}" />
-<meta property="og:type"               content="article" />
-<meta property="og:title"              content="{{event.name}}" />
-<meta property="og:description"        content="{{ event.excerpt|striptags }}" />
-<meta property="og:image"              content="{{ event.images.first.path|resize(600)}}" />
+<meta property="og:url" content="{{''|page}}" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{{event.name}}" />
+<meta property="og:description" content="{{ event.excerpt|striptags }}" />
+<meta property="og:image" content="{{ event.images.first.path|resize(600)}}" />
 {% endput %}
 
 <article class="flex flex-wrap bg-white md:flex-nowrap shadow-lg rounded-lg p-4 space-x-4 my-4">
     <div class="w-full md:w-1/3">
         {% if event.images.first %}
-            <img class="w-full hover:animate-bounce rounded-lg" src="{{event.images.first.path}}" alt="{{event.images.first.title}}" />
+        <img class="w-full rounded-lg" src="{{event.images.first.path}}" alt="{{event.images.first.title}}" />
         {% else %}
-            <img class="w-full hover:animate-bounce rounded-lg" src="https://via.placeholder.com/768x1024.jpg" alt="" />
+        <img class="w-full rounded-lg" src="https://via.placeholder.com/768x1024.jpg" alt="" />
         {% endif %}
     </div>
     <div class="w-full md:w-2/3 flex flex-col">
         <div class="flex-grow-0">
             <div class="text-sm text-gray-800">
-                <span class="data"><i class="icon-calendar-light"></i> {{ event.date_from|date('l j F') }} <i class="icon-clock-1"></i> {{ event.date_from|date('G:i') }}</span>
+                <span class="data"><i class="icon-calendar-light"></i> {{ event.date_from|date('l j F') }} <i
+                        class="icon-clock-1"></i> {{ event.date_from|date('G:i') }}</span>
             </div>
         </div>
         <div class="flex-grow prose prose-xl">
@@ -28,23 +29,41 @@
             <p class="mb-2 text-gray-800">{{ event.excerpt|raw }}</p>
             <p class="mb-2 text-gray-800">{{ event.description|raw }}</p>
         </div>
-        
+
         <div class="flex-grow-0">
             <p class="mb-2 text-gray-800"><i class="icon-location-1"></i> {{ event.venue.name}}</p>
-                <div class="flex space-x-2">
+            <div class="flex space-x-2">
                 {% for tag in event.tags %}
                 <span class="bg-yellow-500 text-xs text-white font-bold rounded px-2 py-1">
                     {{tag.name}}
                 </span>
                 {% endfor %}
-                </div>    
+            </div>
         </div>
     </div>
+
+
 </article>
 
+{% if event.images.count > 1 %}
+
 <article class="bg-white shadow-lg rounded-lg p-4 my-4">
-        <h2 class="font-bold text-black my-2">{{ venue.name }}</h2>
-        <div id="venue" class="rounded-lg map" style="height:450px"></div>
+    <div class="w-full md:space-x-2 flex flex-wrap mt-4">
+        {% for image in event.images %}
+        <div class="w-full md:w-1/2 lg:w-1/3 pb-2">
+            <a href="{{ image.path }}" data-lightbox="event-{{ event.id }}" data-title="{{ image.title }}">
+                <img class="w-full rounded-lg" src="{{ image.path|resize(600) }}" alt="{{ image.title }}" />
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+
+</article>
+{% endif %}
+
+<article class="bg-white shadow-lg rounded-lg p-4 my-4">
+    <h2 class="font-bold text-black my-2">{{ venue.name }}</h2>
+    <div id="venue" class="rounded-lg map" style="height:450px"></div>
 </article>
 
 <article class="bg-white flex justify-between shadow-lg rounded-lg mt-16 mb-24 transform -skew-y-1">
@@ -52,14 +71,17 @@
     <div class="bg-rosso text-white p-4 rounded-l-lg"><i class="icon-share"></i> Condividi: </div>
 
     <div class="py-2 text-3xl mr-4">
-        <a href="https://www.facebook.com/sharer/sharer.php?u={{  url_current()|url_encode}}" target="_blank"><i class="icon-facebook"></i></a>
-        <a href="https://api.whatsapp.com/send?text={{  url_current()|url_encode}}" target="_blank"><i  class="icon-whatsapp"></i></a>
-        <a href="https://t.me/share/url?url={{  url_current()|url_encode}}&text={{release.title|url_encode}}" target="_blank"><i  class="icon-telegram"></i></a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{  url_current()|url_encode}}" target="_blank"><i
+                class="icon-facebook"></i></a>
+        <a href="https://api.whatsapp.com/send?text={{  url_current()|url_encode}}" target="_blank"><i
+                class="icon-whatsapp"></i></a>
+        <a href="https://t.me/share/url?url={{  url_current()|url_encode}}&text={{release.title|url_encode}}"
+            target="_blank"><i class="icon-telegram"></i></a>
     </div>
- 
 
-    
-    
+
+
+
 </article>
 
 
@@ -68,45 +90,47 @@
 
 
 {% put scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js" integrity="sha512-Ixzuzfxv1EqafeQlTCufWfaC6ful6WFqIz4G+dWvK0beHw0NVJwvCKSgafpy5gwNqKmgUfIBraVwkKI+Cz0SEQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.css" integrity="sha512-Woz+DqWYJ51bpVk5Fv0yES/edIMXjj3Ynda+KWTIkGoynAMHrqTcDUQltbipuiaD5ymEo9520lyoVOo9jCQOCA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 <script type="text/javascript">
-var pickup = L.map('venue');
-pickup.scrollWheelZoom.disable();
-
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-	scrollWheelZoom: false,
-	attribution: '&copy; <a href=\"http://osm.org/copyright\">OpenStreetMap</a> contributors'
-}).addTo(pickup);
-
-var IS = L.icon({
-    iconUrl: '{{ "assets/images/marker.png"|theme }}',
-    shadowUrl: '{{ "assets/images/marker-shadow.png"|theme }}',
-
-    iconSize:     [30, 50], 
-    shadowSize:   [40, 20], 
-    iconAnchor:   [15, 50], 
-    shadowAnchor: [4, 20],  
-    popupAnchor:  [-3, -76] 
-});
-
-{% for place in venue.points %}
-{% if (loop.index == 1)%}
-pickup.setView([{{place.lat}},{{place.lon}}], 14);
-{% endif %}
-{% if (place.lat !=0 and place.lon !=0)%}
-var marker{{place.id}} = L.marker([{{place.lat}},{{place.lon}}], {icon: IS }).addTo(pickup).bindPopup("{{place.name}}");
-{%endif%}
-{% endfor %}
-
-
-pickup.on('click', function() {
-  if (pickup.scrollWheelZoom.enabled()) {
+    var pickup = L.map('venue');
     pickup.scrollWheelZoom.disable();
-    }
-    else {
-    pickup.scrollWheelZoom.enable();
-    }
-  });
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        scrollWheelZoom: false,
+        attribution: '&copy; <a href=\"http://osm.org/copyright\">OpenStreetMap</a> contributors'
+    }).addTo(pickup);
+
+    var IS = L.icon({
+        iconUrl: '{{ "assets/images/marker.png"|theme }}',
+        shadowUrl: '{{ "assets/images/marker-shadow.png"|theme }}',
+
+        iconSize: [30, 50],
+        shadowSize: [40, 20],
+        iconAnchor: [15, 50],
+        shadowAnchor: [4, 20],
+        popupAnchor: [-3, -76]
+    });
+
+    {% for place in venue.points %}
+    {% if (loop.index == 1)%}
+    pickup.setView([{{ place.lat }}, {{ place.lon }}], 14);
+    {% endif %}
+    {% if (place.lat != 0 and place.lon != 0)%}
+    var marker{{ place.id }} = L.marker([{{ place.lat }}, {{ place.lon }}], { icon: IS }).addTo(pickup).bindPopup("{{place.name}}");
+    {% endif %}
+    {% endfor %}
+
+
+    pickup.on('click', function () {
+        if (pickup.scrollWheelZoom.enabled()) {
+            pickup.scrollWheelZoom.disable();
+        }
+        else {
+            pickup.scrollWheelZoom.enable();
+        }
+    });
 
 </script>
 {% endput %}
-

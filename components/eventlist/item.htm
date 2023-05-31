@@ -3,7 +3,7 @@
 
         <div class="w-full md:w-1/2 bg-gray-800">
             {% if event.images.first %}
-            <a href="{{event.url}}"><img class="w-full" src="{{event.images.first.path|resize(768)}}" alt="{{event.images.first.title}}" /></a>
+            <a href="{{event.url}}" title="{{ event.name }}" ><img class="w-full" src="{{event.images.first.path|resize(768)}}" alt="{{event.images.first.title}}" /></a>
             {% else %}
                 <img class="w-full hover:animate-bounce rounded-lg" src="https://via.placeholder.com/768x1024.jpg" alt="" />
             {% endif %}
@@ -14,7 +14,7 @@
                 <span class="data"><i class="icon-calendar-light"></i> {{ event.date_from|date('l j F') }} <i class="icon-clock-1"></i> {{ event.date_from|date('G:i') }}</span>
             </div>
         
-            <h2 class="font-bold text-black my-2"><a href="{{ event.url }}">{{ event.name }}</a></h2>
+            <h2 class="font-bold text-black my-2"><a href="{{ event.url }}" title="{{ event.name }}">{{ event.name }}</a></h2>
             <div class="flex-grow prose mb-2 text-gray-800">
                 {{ event.excerpt|raw }}
             </div>
@@ -22,14 +22,14 @@
             <p class="mb-2 text-gray-800"><i class="icon-location-1"></i> {{ event.venue.name}}</p>
                 <div class="flex space-x-3">
                 {% for tag in event.tags %}
-                <a href="{{tag.url}}" class="bg-yellow-500 text-xs text-white font-bold rounded px-3 py-2">
+                <a href="{{tag.url}}" title="{{tag.name}}" class="bg-yellow-500 text-xs text-white font-bold rounded px-3 py-2">
                     {{tag.name}}
                 </a>
                 {% endfor %}
                 </div>    
             </div>
             <div class="flex-grow-0 flex justify-end">
-            <a href="{{event.url}}" class="px-4 py-2 bg-blu hover:bg-azzurro hover:shadow text-white font-bold text-sm uppercase rounded transition duration-300 ease-in-out">
+            <a href="{{event.url}}" title="{{ event.name }}" class="px-4 py-2 bg-blu hover:bg-azzurro hover:shadow text-white font-bold text-sm uppercase rounded transition duration-300 ease-in-out">
                 + informazioni
             </a>
             </div>
