@@ -75,12 +75,24 @@ class EventPage extends ComponentBase
     protected function loadEvent()
     {
         $slug = $this->property('slug');
+        $y = $this->property('y');
+        $m = $this->property('m');
+        $d = $this->property('d');
         $event = new E;
-        $event = $event->isClassExtendedWith('RainLab.Translate.Behaviors.TranslatableModel')
+              $event = $event->isClassExtendedWith('RainLab.Translate.Behaviors.TranslatableModel')
             ? $event->transWhere('slug', $slug)
             : $event->where('slug', $slug);
         //verify if published
+        //verify if date is set
+        if ($y && $m && $d) {
+            $event = $event->whereYear('date_from', $y)
+                ->whereMonth('date_from', $m)
+                ->whereDay('date_from', $d);
+        };
         $event = $event->with('venue')->first();
+        
+        
+  
         return $event;
     }
 
