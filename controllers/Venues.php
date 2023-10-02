@@ -11,7 +11,7 @@ class Venues extends Controller
     public $formConfig = 'config_form.yaml';
 
     public $requiredPermissions = [
-        'moonwalkerz.events.access_venuess',
+        'moonwalkerz.events.access_venues',
     ];
 
     public function __construct()
