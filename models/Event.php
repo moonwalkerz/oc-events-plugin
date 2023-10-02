@@ -100,7 +100,7 @@ class Event extends Model
      */
     public function canEdit(User $user)
     {
-        return ($this->user_id == $user->id) || $user->hasAnyAccess(['rainlab.blog.access_other_posts']);
+        return ($this->user_id == $user->id) || $user->hasAnyAccess(['moonwalkerz.events.access_other_posts']);
     }
 
     //

@@ -66,24 +66,62 @@
     <div id="venue" class="rounded-lg map" style="height:450px"></div>
 </article>
 
-<article class="bg-white flex justify-between shadow-lg rounded-lg mt-16 mb-24 transform -skew-y-1">
 
-    <div class="bg-rosso text-white p-4 rounded-l-lg"><i class="icon-share"></i> Condividi: </div>
+{% if (event.attachments.count > 0) and showAttachments %}
+<article class="bg-white flex flex-col shadow-lg rounded-lg mt-16 mb-24 p-3 space-y-2">
+{%for attachment in event.attachments%}
+<a href="{{attachment.path}}" download class="hover:no-underline">
+    <div class="flex items-center hover:bg-gray-100 rounded-lg py-2">
+    <div class="w-[5rem]">
+        {% if 'image' in attachment.content_type %}
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 mx-auto">
+            <path fill-rule="evenodd" d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z" clip-rule="evenodd" />
+          </svg>
+        {% else %}
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 mx-auto">
+            <path d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0016.5 9h-1.875a1.875 1.875 0 01-1.875-1.875V5.25A3.75 3.75 0 009 1.5H5.625z" />
+            <path d="M12.971 1.816A5.23 5.23 0 0114.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 013.434 1.279 9.768 9.768 0 00-6.963-6.963z" />
+          </svg>
+        {% endif %}
 
-    <div class="py-2 text-3xl mr-4">
-        <a href="https://www.facebook.com/sharer/sharer.php?u={{  url_current()|url_encode}}" target="_blank"><i
-                class="icon-facebook"></i></a>
-        <a href="https://api.whatsapp.com/send?text={{  url_current()|url_encode}}" target="_blank"><i
-                class="icon-whatsapp"></i></a>
-        <a href="https://t.me/share/url?url={{  url_current()|url_encode}}&text={{release.title|url_encode}}"
-            target="_blank"><i class="icon-telegram"></i></a>
     </div>
-
-
-
-
+    <div class="w-full">
+        <h2 class="text-lg font-bold">{% if attachment.title %}{{attachment.title}}{% else %}{{attachment.file_name}}{% endif %}</h2>
+        {% if attachment.description %}<p class="text-sm italic">{{attachment.description}}</p>{% endif %}
+    </div>
+    <div class="w-[8rem] text-right">
+        {{attachment.size}}
+    </div>
+    <div class="w-[4rem]">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 mx-auto">
+                <path fill-rule="evenodd" d="M5.625 1.5H9a3.75 3.75 0 013.75 3.75v1.875c0 1.036.84 1.875 1.875 1.875H16.5a3.75 3.75 0 013.75 3.75v7.875c0 1.035-.84 1.875-1.875 1.875H5.625a1.875 1.875 0 01-1.875-1.875V3.375c0-1.036.84-1.875 1.875-1.875zm5.845 17.03a.75.75 0 001.06 0l3-3a.75.75 0 10-1.06-1.06l-1.72 1.72V12a.75.75 0 00-1.5 0v4.19l-1.72-1.72a.75.75 0 00-1.06 1.06l3 3z" clip-rule="evenodd" />
+                <path d="M14.25 5.25a5.23 5.23 0 00-1.279-3.434 9.768 9.768 0 016.963 6.963A5.23 5.23 0 0016.5 7.5h-1.875a.375.375 0 01-.375-.375V5.25z" />
+              </svg>
+    </div>
+    </div>
+</a>
+{% endfor %}
 </article>
+{% endif %}
+<article class="bg-white flex justify-between shadow-lg rounded-lg mt-16 mb-24 transform -skew-y-1">
+    <div class="bg-blue-600 text-white flex items-center space-x-2 rounded-l-lg py-2 px-4">
+        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" class="w-12 h-12 mr-2" fill="currentColor"><path d="M 23 3 A 4 4 0 0 0 19 7 A 4 4 0 0 0 19.09375 7.8359375 L 10.011719 12.376953 A 4 4 0 0 0 7 11 A 4 4 0 0 0 3 15 A 4 4 0 0 0 7 19 A 4 4 0 0 0 10.013672 17.625 L 19.089844 22.164062 A 4 4 0 0 0 19 23 A 4 4 0 0 0 23 27 A 4 4 0 0 0 27 23 A 4 4 0 0 0 23 19 A 4 4 0 0 0 19.986328 20.375 L 10.910156 15.835938 A 4 4 0 0 0 11 15 A 4 4 0 0 0 10.90625 14.166016 L 19.988281 9.625 A 4 4 0 0 0 23 11 A 4 4 0 0 0 27 7 A 4 4 0 0 0 23 3 z"/></svg>
+        {{ 'Share'|_ }}
+    </div>
+    <div class="flex p-2 mr-4 space-x-2">
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{  url_current()|url_encode}}" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" class="w-12 h-12"  fill="currentColor">    <path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M37,19h-2c-2.14,0-3,0.5-3,2 v3h5l-1,5h-4v15h-5V29h-4v-5h4v-3c0-4,2-7,6-7c2.9,0,4,1,4,1V19z"/></svg>
 
+        </a>
+        <a href="https://api.whatsapp.com/send?text={{  url_current()|url_encode}}" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50"  class="w-12 h-12"  fill="currentColor">    <path d="M25,2C12.318,2,2,12.318,2,25c0,3.96,1.023,7.854,2.963,11.29L2.037,46.73c-0.096,0.343-0.003,0.711,0.245,0.966 C2.473,47.893,2.733,48,3,48c0.08,0,0.161-0.01,0.24-0.029l10.896-2.699C17.463,47.058,21.21,48,25,48c12.682,0,23-10.318,23-23 S37.682,2,25,2z M36.57,33.116c-0.492,1.362-2.852,2.605-3.986,2.772c-1.018,0.149-2.306,0.213-3.72-0.231 c-0.857-0.27-1.957-0.628-3.366-1.229c-5.923-2.526-9.791-8.415-10.087-8.804C15.116,25.235,13,22.463,13,19.594 s1.525-4.28,2.067-4.864c0.542-0.584,1.181-0.73,1.575-0.73s0.787,0.005,1.132,0.021c0.363,0.018,0.85-0.137,1.329,1.001 c0.492,1.168,1.673,4.037,1.819,4.33c0.148,0.292,0.246,0.633,0.05,1.022c-0.196,0.389-0.294,0.632-0.59,0.973 s-0.62,0.76-0.886,1.022c-0.296,0.291-0.603,0.606-0.259,1.19c0.344,0.584,1.529,2.493,3.285,4.039 c2.255,1.986,4.158,2.602,4.748,2.894c0.59,0.292,0.935,0.243,1.279-0.146c0.344-0.39,1.476-1.703,1.869-2.286 s0.787-0.487,1.329-0.292c0.542,0.194,3.445,1.604,4.035,1.896c0.59,0.292,0.984,0.438,1.132,0.681 C37.062,30.587,37.062,31.755,36.57,33.116z"/></svg>
+        </a>
+        <a href="https://t.me/share/url?url={{  url_current()|url_encode}}&text={{release.title|url_encode}}"
+            target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" class="w-12 h-12" fill="currentColor"><path d="M25,2c12.703,0,23,10.297,23,23S37.703,48,25,48S2,37.703,2,25S12.297,2,25,2z M32.934,34.375	c0.423-1.298,2.405-14.234,2.65-16.783c0.074-0.772-0.17-1.285-0.648-1.514c-0.578-0.278-1.434-0.139-2.427,0.219	c-1.362,0.491-18.774,7.884-19.78,8.312c-0.954,0.405-1.856,0.847-1.856,1.487c0,0.45,0.267,0.703,1.003,0.966	c0.766,0.273,2.695,0.858,3.834,1.172c1.097,0.303,2.346,0.04,3.046-0.395c0.742-0.461,9.305-6.191,9.92-6.693	c0.614-0.502,1.104,0.141,0.602,0.644c-0.502,0.502-6.38,6.207-7.155,6.997c-0.941,0.959-0.273,1.953,0.358,2.351	c0.721,0.454,5.906,3.932,6.687,4.49c0.781,0.558,1.573,0.811,2.298,0.811C32.191,36.439,32.573,35.484,32.934,34.375z"/></svg>
+        </a>
+    </div>
+</article>
 
 
 
@@ -94,6 +132,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.css" integrity="sha512-Woz+DqWYJ51bpVk5Fv0yES/edIMXjj3Ynda+KWTIkGoynAMHrqTcDUQltbipuiaD5ymEo9520lyoVOo9jCQOCA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <script type="text/javascript">
+
+document.addEventListener("DOMContentLoaded", (event) => {
+
     var pickup = L.map('venue');
     pickup.scrollWheelZoom.disable();
 
@@ -102,26 +143,26 @@
         attribution: '&copy; <a href=\"http://osm.org/copyright\">OpenStreetMap</a> contributors'
     }).addTo(pickup);
 
+    {% if (showCustomIcon) %}
     var IS = L.icon({
-        iconUrl: '{{ "assets/images/marker.png"|theme }}',
-        shadowUrl: '{{ "assets/images/marker-shadow.png"|theme }}',
-
+        iconUrl: '{{ marker|media }}',
+        shadowUrl: '{{ markerShadow|media }}',
         iconSize: [30, 50],
         shadowSize: [40, 20],
         iconAnchor: [15, 50],
         shadowAnchor: [4, 20],
         popupAnchor: [-3, -76]
     });
+    {% endif %}
 
     {% for place in venue.points %}
-    {% if (loop.index == 1)%}
-    pickup.setView([{{ place.lat }}, {{ place.lon }}], 14);
-    {% endif %}
-    {% if (place.lat != 0 and place.lon != 0)%}
-    var marker{{ place.id }} = L.marker([{{ place.lat }}, {{ place.lon }}], { icon: IS }).addTo(pickup).bindPopup("{{place.name}}");
-    {% endif %}
+        {% if (loop.index == 1)%}
+            pickup.setView([{{ place.lat }}, {{ place.lon }}], 14);
+        {% endif %}
+        {% if (place.lat != 0 and place.lon != 0)%}
+            var marker{{ place.id }} = L.marker([{{ place.lat }}, {{ place.lon }}]
+        {% if (showCustomIcon) %},{icon: IS} {% endif %}).addTo(pickup).bindPopup("{{place.name}}");{% endif %}
     {% endfor %}
-
 
     pickup.on('click', function () {
         if (pickup.scrollWheelZoom.enabled()) {
@@ -131,6 +172,6 @@
             pickup.scrollWheelZoom.enable();
         }
     });
-
+});
 </script>
 {% endput %}

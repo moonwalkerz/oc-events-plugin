@@ -128,6 +128,13 @@ class EventList extends ComponentBase
                 'default'     => 'tags/post',
                 'group'       => 'Links',
             ],
+            'baseCss' => [
+                'title'       => 'moonwalkerz.events::lang.components.list.base_css',
+                'description' => 'moonwalkerz.events::lang.components.list.base_css_description',
+                'type'        => 'checkbox',
+                'default'     => 1,
+                'group'       => 'Styles',
+            ],
         ];
     }
 
@@ -229,6 +236,10 @@ class EventList extends ComponentBase
 
     protected function prepareVars()
     {
+
+        if($this->property('baseCss')){
+            $this->addCss('assets/css/events.css');
+        }
 
         $this->pageParam = $this->page['pageParam'] = $this->paramName('pageNumber');
 

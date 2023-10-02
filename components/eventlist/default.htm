@@ -47,7 +47,9 @@
 {% endif %}
 
 {% if paginate == 2%}
+{% if events.count > 0 %}
 <div id="loadmore" class="flex justify-center">
 {% partial __SELF__ ~ '::loadmore' pageNumber = pageNumber%}
 </div>
+{% endif %}
 {% endif%}
