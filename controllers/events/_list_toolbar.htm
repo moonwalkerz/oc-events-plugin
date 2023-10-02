@@ -1,9 +1,9 @@
 <div data-control="toolbar">
-    <?php if (BackendAuth::userHasAccess('moonwalkerz.events::lang.permissions.access_events.create')): ?>
+    <?php if (BackendAuth::userHasPermission(['moonwalkerz.events.access_events.create'])): ?>
 
         <a href="<?= Backend::url('moonwalkerz/events/events/create') ?>" class="btn btn-primary oc-icon-plus"><?= e(trans('moonwalkerz.events::lang.form.create').' '.trans('moonwalkerz.events::lang.form.event')) ?></a>
         <?php endif; ?>
-        <?php if (BackendAuth::userHasAccess('moonwalkerz.events::lang.permissions.access_events.delete')): ?>
+        <?php if (BackendAuth::userHasPermission(['moonwalkerz.events.access_events.delete'])): ?>
 
             <button
         class="btn btn-default oc-icon-trash-o"

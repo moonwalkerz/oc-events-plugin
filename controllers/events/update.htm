@@ -15,7 +15,7 @@
 
         <div class="form-buttons">
             <div class="loading-indicator-container">
-                <?php if (BackendAuth::userHasAccess('moonwalkerz.events::lang.permissions.access_events.update')): ?>
+                <?php if (BackendAuth::userHasPermission(['moonwalkerz.events.access_events.update'])): ?>
 
                 <button
                     type="submit"
@@ -37,7 +37,7 @@
                 </button>
                 <?php endif ?>
 
-                <?php if (BackendAuth::userHasAccess('moonwalkerz.events::lang.permissions.access_events.delete')): ?>
+                <?php if (BackendAuth::userHasPermission(['moonwalkerz.events.access_events.delete'])): ?>
                 <button
                     type="button"
                     class="oc-icon-trash-o btn-icon danger pull-right"

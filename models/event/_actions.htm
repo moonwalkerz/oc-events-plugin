@@ -1,2 +1,3 @@
+<?php if (BackendAuth::userHasPermission(['moonwalkerz.events.access_events.create'])): ?>
 <a href="<?= Backend::url('/moonwalkerz/events/events/clone', $record->id) ?>" class="btn btn-default"><i class="icon-clone"></i></a>
-
+<?php endif; ?>
