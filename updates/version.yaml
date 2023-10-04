@@ -34,3 +34,5 @@
     - 'French locale added'
 1.0.17:
     - 'debug info removed'
+1.0.18:
+    - '-frontend graphic fix and permission fix'
