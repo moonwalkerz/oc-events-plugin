@@ -4,6 +4,16 @@
 
 MoonWalkerz present "Events"! A simple event plugin for October CMS. this plugin allows you to create and publish events on your website. What more do you want?
 
+## News and Changelog
+
+V1.0.18
+
+- Add Default Event theme in Tailwind CSS, you can disable this function in component settings and use your custom css.
+- in component settings you can enable or disable attachments.
+- Leaflet map update and minor fix.
+- Perimission fix.
+
+
 ## 🔥 Features 🔥
 
 - Fully manageable from backend.
@@ -12,6 +22,8 @@ MoonWalkerz present "Events"! A simple event plugin for October CMS. this plugin
 - Add and manage multiple tags.
 - Add and manage mutiple contacts.
 - You can set the start and end of the event.
+- Default Tailwind CSS event style
+- Enable ord disable attachments on event page
 
 ## 💊 Dependencies 💊
 
@@ -35,6 +47,10 @@ php artisan october:migrate
 ## ⚙️ Documentation ⚙️
 
 Using this plugin is really simple! Once installed just insert the component on the page and and enter the settings and filters you want.
+
+In page component setting, by default is enabled Tailwind css style, you can disable that and use your custom style.
+
+in single event page, in component settings you can enable or disable attachments.
 
 below some examples:
 
@@ -106,6 +122,7 @@ tags = "{{ :tags }}"
 ## 🙏 Big Thanks to 🙏
 - Leaflet | http://leafletjs.com
 - Rainlab | https://github.com/rainlab
+- BlackFox IT | https://blackfox.it (bug reporting and testing)
 
  
 
@@ -114,7 +131,7 @@ tags = "{{ :tags }}"
 These codes make your life easier and you avoid wasting time?\
 Give us some RedBull!
 
-BUSD(BEP20)\
+USDT(BEP20)\
 0x367B9207ACBC30022F9A7262320E36661D7Ffeb5
 
 ## ✉️ Contact Us ✉️ 
