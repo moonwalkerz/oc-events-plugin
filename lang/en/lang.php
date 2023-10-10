@@ -110,9 +110,21 @@ return [
     ],
     "permissions" => [
         "access_categories" => "Access categories",
+        "access_categories_create" => "Create categories",
+        "access_categories_delete" => "Delete categories",
+        "access_categories_update" => "Update categories",
         "access_events" => "Access events",
+        "access_events_create" => "Create events",
+        "access_events_delete" => "Delete events",
+        "access_events_update" => "Update Events",
         "access_tags" => "Access tags",
+        "access_tags_create" => "Create Tags",
+        "access_tags_delete" => "Delete tags",
+        "access_tags_update" => "Update tags",
         "access_venues" => "Access venues",
+        "access_venues_create" => "Create venues",
+        "access_venues_delete" => "Delete venues",
+        "access_venues_update" => "Update venues",
         "events_tab" => "Events"
     ],
     "plugin" => ["description" => "Event manager", "name" => "Events"]

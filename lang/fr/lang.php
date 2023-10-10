@@ -105,9 +105,21 @@ return [
     "menu" => ["categories" => "", "events" => "", "tags" => "", "venues" => ""],
     "permissions" => [
         "access_categories" => "Accès aux catégories",
+        "access_categories_create" => "Créer des catégories",
+        "access_categories_delete" => "Supprimer des catégories",
+        "access_categories_update" => "Mise à jour des catégories",
         "access_events" => "Accès aux événements ",
+        "access_events_create" => "Créer des événements",
+        "access_events_delete" => "Supprimer des événements",
+        "access_events_update" => "Mise à jour des événements",
         "access_tags" => "Accès aux étiquettes",
+        "access_tags_create" => "Créer des étiquettes",
+        "access_tags_delete" => "Supprimer les étiquettes",
+        "access_tags_update" => "Mise à jour des étiquettes",
         "access_venues" => "Accès aux lieux",
+        "access_venues_create" => "Créer des lieux",
+        "access_venues_delete" => "Supprimer des lieux",
+        "access_venues_update" => "Mise à jour des emplacements",
         "events_tab" => "Événements"
     ],
     "plugin" => ["description" => "Gestion des événements", "name" => "Événements"]

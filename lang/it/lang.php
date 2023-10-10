@@ -110,9 +110,21 @@ return [
     ],
     "permissions" => [
         "access_categories" => "Accedi alle categorie",
+        "access_categories_create" => "Crea categorie",
+        "access_categories_delete" => "Elimina categorie",
+        "access_categories_update" => "Aggiorna categorie",
         "access_events" => "Accedi agli eventi",
+        "access_events_create" => "Crea eventi",
+        "access_events_delete" => "Elimina eventi",
+        "access_events_update" => "Aggiorna eventi",
         "access_tags" => "Accedi alle etichette",
+        "access_tags_create" => "Crea Etichette",
+        "access_tags_delete" => "Elimina etichette",
+        "access_tags_update" => "Aggiorna etichette",
         "access_venues" => "Accedi ai luoghi",
+        "access_venues_create" => "Crea luoghi",
+        "access_venues_delete" => "Elimina luoghi",
+        "access_venues_update" => "Aggiorna luoghi",
         "events_tab" => "Eventi"
     ],
     "plugin" => ["description" => "Gestione di eventi", "name" => "Eventi"]

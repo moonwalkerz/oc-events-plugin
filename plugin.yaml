@@ -1,7 +1,7 @@
 plugin:
     name: 'moonwalkerz.events::lang.plugin.name'
     description: 'moonwalkerz.events::lang.plugin.description'
-    author: 'MoonWalkerz'
+    author: MoonWalkerz
     icon: oc-icon-ticket
     homepage: ''
 navigation:
@@ -17,22 +17,71 @@ navigation:
                 url: moonwalkerz/events/events
                 icon: icon-ticket
                 permissions:
-                    - 'moonwalkerz.events.access_events'
+                    - moonwalkerz.events.access_events
             side-event-venue:
                 label: 'moonwalkerz.events::lang.menu.venues'
                 url: moonwalkerz/events/venues
                 icon: icon-home
                 permissions:
-                    - 'moonwalkerz.events.access_venues'
+                    - moonwalkerz.events.access_venues
             side-event-category:
                 label: 'moonwalkerz.events::lang.menu.categories'
                 url: moonwalkerz/events/categories
                 icon: icon-list-alt
                 permissions:
-                    - 'moonwalkerz.events.access_categories'
+                    - moonwalkerz.events.access_categories
             side-event-tag:
                 label: 'moonwalkerz.events::lang.menu.tags'
                 url: moonwalkerz/events/tags
                 icon: icon-tags
                 permissions:
-                    - 'moonwalkerz.events.access_tags'
+                    - moonwalkerz.events.access_tags
+permissions:
+    moonwalkerz.events.access_events:
+        label: 'moonwalkerz.events::lang.permissions.access_events'
+        tab: 'moonwalkerz.events::lang.permissions.events_tab'
+    moonwalkerz.events.access_events.create:
+        label: 'moonwalkerz.events::lang.permissions.access_events_create'
+        tab: 'moonwalkerz.events::lang.permissions.events_tab'
+    moonwalkerz.events.access_events.update:
+        label: 'moonwalkerz.events::lang.permissions.access_events_update'
+        tab: 'moonwalkerz.events::lang.permissions.events_tab'
+    moonwalkerz.events.access_events.delete:
+        label: 'moonwalkerz.events::lang.permissions.access_events_delete'
+        tab: 'moonwalkerz.events::lang.permissions.events_tab'
+    moonwalkerz.events.access_venues:
+        label: 'moonwalkerz.events::lang.permissions.access_venues'
+        tab: 'moonwalkerz.events::lang.permissions.events_tab'
+    moonwalkerz.events.access_venues.create:
+        label: 'moonwalkerz.events::lang.permissions.access_venues_create'
+        tab: 'moonwalkerz.events::lang.permissions.events_tab'
+    moonwalkerz.events.access_venues.update:
+        label: 'moonwalkerz.events::lang.permissions.access_venues_update'
+        tab: 'moonwalkerz.events::lang.permissions.events_tab'
+    moonwalkerz.events.access_venues.delete:
+        label: 'moonwalkerz.events::lang.permissions.access_venues_delete'
+        tab: 'moonwalkerz.events::lang.permissions.events_tab'
+    moonwalkerz.events.access_categories:
+        label: 'moonwalkerz.events::lang.permissions.access_categories'
+        tab: 'moonwalkerz.events::lang.permissions.events_tab'
+    moonwalkerz.events.access_categories.create:
+        label: 'moonwalkerz.events::lang.permissions.access_categories_create'
+        tab: 'moonwalkerz.events::lang.permissions.events_tab'
+    moonwalkerz.events.access_categories.update:
+        label: 'moonwalkerz.events::lang.permissions.access_categories_update'
+        tab: 'moonwalkerz.events::lang.permissions.events_tab'
+    moonwalkerz.events.access_categories.delete:
+        label: 'moonwalkerz.events::lang.permissions.access_categories_delete'
+        tab: 'moonwalkerz.events::lang.permissions.events_tab'
+    moonwalkerz.events.access_tags:
+        label: 'moonwalkerz.events::lang.permissions.access_tags'
+        tab: 'moonwalkerz.events::lang.permissions.events_tab'
+    moonwalkerz.events.access_tags.create:
+        label: 'moonwalkerz.events::lang.permissions.access_tags_create'
+        tab: 'moonwalkerz.events::lang.permissions.events_tab'
+    moonwalkerz.events.access_tags.update:
+        label: 'moonwalkerz.events::lang.permissions.access_tags_update'
+        tab: 'moonwalkerz.events::lang.permissions.events_tab'
+    moonwalkerz.events.access_tags.delete:
+        label: 'moonwalkerz.events::lang.permissions.access_tags_delete'
+        tab: 'moonwalkerz.events::lang.permissions.events_tab'
