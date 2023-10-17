@@ -6,6 +6,11 @@ MoonWalkerz present "Events"! A simple event plugin for October CMS. this plugin
 
 ## News and Changelog
 
+V1.0.21
+
+- Minor bug fix.
+- Translations added and fixed.
+
 V1.0.18
 
 - Add Default Event theme in Tailwind CSS, you can disable this function in component settings and use your custom css.
